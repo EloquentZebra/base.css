@@ -1,11 +1,11 @@
 :root {
 	color-scheme: light dark;
 
-	--border-radius: 4px;
-	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	--border-radius: 0.25e,:
+	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
 	--hover-brightness: 1.2;
 	--width-content: clamp(600px, 75ch, 850px);
-	--gap: 1rem;
+	--gap: clamp(1rem, 6vw, 3rem);
 
 	--color: #B10DC9;
 	--color-accent: #39CCCC;
@@ -39,7 +39,7 @@
 		--color-text-muted: #a2a3a5;
 
 		--form-text: var(--color-white);
-		--shadow: box-shadow: 0 1.5px 4px rgba(255, 255, 255, 0.24), 0 1.5px 6px rgba(255, 255, 255, 0.12);
+		--shadow: box-shadow: 0 1.5px 4px rgba(255, 255, 255, 0.24), 0 1.5px 0.25em rgba(255, 255, 255, 0.12);
 	}
 
 	body.enable-dm img:not([src*=".svg"]) {
@@ -186,7 +186,7 @@ img {
 img, picture, video, canvas, svg {
 	display: block;
 	max-inline-size: 100%;
-    max-block-size: 100%;
+		max-block-size: 100%;
 	border-radius: var(--border-radius);
 	margin: var(--gap) auto;
 }
@@ -354,80 +354,150 @@ blockquote cite {
  * FORMS
  */
 
-form {
-	border: 1px solid var(--color-border);
-	border-radius: var(--border-radius);
-	box-shadow: var(--shadow);
-	display: block;
-	padding: var(--gap);
-	width: 100%;
-}
-
-input, button, textarea, select {
-	font: inherit;
-}
-
-fieldset {
-	padding: 0.5rem 2rem;
-}
-
-legend {
-	text-transform: uppercase;
-	font-size: 0.8em;
-	letter-spacing: 0.1rem;
-}
-
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]),
-select,
-textarea,
-textarea[type="text"] {
-	font-family: inherit;
-	padding: calc(var(--gap) / 2) var(--gap);
-	border-radius: 4px;
-	border: 1px solid var(--color-text-muted);
-	font-size: 1em;
-	transition: all 0.2s ease;
-	display: block;
-	width: 100%;
-}
-
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]):not(:disabled):hover,
-select:hover,
-textarea:hover,
-textarea[type="text"]:hover {
-	border-color: var(--color-text);
-}
-
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]):focus,
-select:focus,
-textarea:focus,
-textarea[type="text"]:focus {
-	outline: none;
-	border-color: var(--color);
-	box-shadow: 0 0 1px var(--color);
-}
-
-input.error:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]),
-textarea.error {
-	border-color: var(--color-error);
-}
-
-input.success:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]),
-textarea.success {
-	border-color: var(--color-success);
-}
-
+input:not([type="checkbox"]):not([type="radio"]),
 select {
-	background: #f3f3f6 no-repeat 100%;
-	background-size: 1ex;
-	background-origin: content-box;
-	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='40' fill='%23555'><polygon points='0,0 60,0 30,40'/></svg>");
+	display: block;
 }
-
-[type="checkbox"],
-[type="radio"] {
-	width: 1.6em;
-	height: 1.6em;
+input {
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: inherit;
+	font-size: inherit;
+	margin-right: 0.25em;
+	margin-bottom: 0.25em;
+	padding: 0.5em;
+	border: none;
+	border-radius: var(--border-radius);
+	outline: none;
+	border: 0.1em solid var(--color-border);
+}
+textarea {
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: inherit;
+	font-size: inherit;
+	margin-right: 0.25em;
+	margin-bottom: 0.25em;
+	padding: 0.5em;
+	border: none;
+	border-radius: var(--border-radius);
+	outline: none;
+	border: 0.1em solid var(--color-border);
+}
+select {
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: inherit;
+	font-size: inherit;
+	margin-right: 0.25em;
+	margin-bottom: 0.25em;
+	padding: 0.5em;
+	border: none;
+	border-radius: var(--border-radius);
+	outline: none;
+	border: 0.1em solid var(--color-border);
+}
+input[type="color"] {
+	min-height: 2rem;
+	padding: 0.5em;
+	cursor: pointer;
+}
+input[type="checkbox"],
+input[type="radio"] {
+	height: 1.2em;
+	width: 1em;
+}
+input[type="radio"] {
+	border-radius: 100%;
+}
+input {
+	vertical-align: top;
+}
+label {
+	vertical-align: middle;
+	margin-bottom: 0.25em;
+	display: inline-block;
+}
+input:not([type="checkbox"]):not([type="radio"]),
+input[type="range"],
+select,
+button,
+textarea {
+	-webkit-appearance: none;
+}
+textarea {
+	display: block;
+	margin-right: 0;
+	resize: vertical;
+	width: 100%;
+}
+textarea:not([cols]) {
+	width: 100%;
+}
+textarea:not([rows]) {
+	min-height: 3em;
+	height: 8em;
+}
+select {
+	padding-right: 2em;
+}
+select::-ms-expand {
+	display: none;
+}
+select[multiple] {
+	padding-right: 0.5em;
+	background-image: none;
+	overflow-y: auto;
+}
+input:focus {
+	border: 0.1em solid var(--color);
+	box-shadow: var(--shadow);
+}
+select:focus {
+	border: 0.1em solid var(--color);
+	box-shadow: var(--shadow);
+}
+textarea:focus {
+	border: 0.1em solid var(--color);
+	box-shadow: var(--shadow);
+}
+input:disabled,
+select:disabled,
+button:disabled,
+textarea:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+::-moz-placeholder {
+	color: var(--color-text-muted);
+	color: var(--form-placeholder);
+}
+:-ms-input-placeholder {
+	color: var(--color-text-muted);
+	color: var(--form-placeholder);
+}
+::placeholder {
+	color: var(--color-text-muted);
+	color: var(--form-placeholder);
+}
+fieldset {
+	border: 0.1em solid var(--color-border);
+	border-radius: var(--border-radius);
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0.5em 1em;
+}
+legend {
+	font-size: 0.9em;
+	font-weight: 600;
+}
+input[type="range"] {
+	margin: 0.5em 0;
+	padding: 0.5em 0;
+	background: transparent;
+}
+input[type="range"]:focus {
+	outline: none;
 }
 
 .button,
@@ -440,7 +510,7 @@ button {
 	color: var(--color-text);
 	background-color: var(--color);
 	border-radius: var(--border-radius);
-	border: 1px solid transparent;
+	border: 0.1em solid transparent;
 	font-size: var(--font-size);
 	line-height: 1;
 	text-align: center;
@@ -521,12 +591,12 @@ th, td {
 }
 
 tbody {
-	border: 1px solid var(--color-border);
+	border: 0.1em solid var(--color-border);
 }
 
 tbody tr {
-	border-top: 1px solid var(--color-border);
-	border-bottom: 1px solid var(--color-border);
+	border-top: 0.1em solid var(--color-border);
+	border-bottom: 0.1em solid var(--color-border);
 }
 
 tbody tr:first-child {
@@ -548,9 +618,9 @@ table.neutral tbody tr {
 tfoot {
 	display: table-footer-group;
 	border: 0;
-	border-left: 1px solid var(--color);
-	border-bottom: 1px solid var(--color);
-	border-right: 1px solid var(--color);
+	border-left: 0.1em solid var(--color);
+	border-bottom: 0.1em solid var(--color);
+	border-right: 0.1em solid var(--color);
 }
 
 tfoot th {
@@ -573,7 +643,7 @@ details {
 	width: 100%;
 	max-width: calc(100% - 2em);
 	position: relative;
-	border: 1px solid var(--color-text);
+	border: 0.1em solid var(--color-text);
 	border-radius: var(--border-radius);
 	background-color: var(--color-bg);
 	color: var(--color-text);
@@ -771,7 +841,6 @@ summary {
 /* https://ryanmulligan.dev/blog/layout-breakouts */
 
 .content {
-	--gap: clamp(1rem, 6vw, 3rem);
 	--full: minmax(var(--gap), 1fr);
 	--content: min(50ch, 100% - var(--gap) * 2);
 	--popout: minmax(0, 2rem);
