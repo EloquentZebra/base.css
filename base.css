@@ -1,7 +1,7 @@
 :root {
 	color-scheme: light dark;
 
-	--border-radius: 0.25e,:
+	--border-radius: 0.25em;
 	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
 	--hover-brightness: 1.2;
 	--width-content: clamp(600px, 75ch, 850px);
