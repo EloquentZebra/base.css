@@ -4,7 +4,7 @@
 	--border-radius: 0.25em;
 	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
 	--hover-brightness: 1.2;
-	--width-content: clamp(600px, 75ch, 850px);
+	--width-content: clamp(50ch, 75ch, 850px)
 	--gap: clamp(1rem, 6vw, 3rem);
 
 	--color: #B10DC9;
@@ -842,7 +842,7 @@ summary {
 
 .content {
 	--full: minmax(var(--gap), 1fr);
-	--content: clamp(50ch, 75ch, 850px) /* min(50ch, 100% - var(--gap) * 2); */
+	--content: var(--width-content) /* min(50ch, 100% - var(--gap) * 2); */
 	--popout: minmax(0, 2rem);
 	--feature: minmax(0, 5rem);
 
