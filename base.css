@@ -14,7 +14,7 @@
 	--color-error: #d43939;
 	--color-success: #28bd14;
 
-	--color-bg: #F8F9FA;
+	--color-bg: #ffffff;
 	--color-bg-secondary: #eee;
 
 	--color-text: #333333;
@@ -80,7 +80,14 @@
 	transition: all var(--animation-duration);
 }
 
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
 body {
+	min-height: 100vh;
 	color: var(--color-text);
 	font-size: var(--font-size);
 	background-color: var(--color-bg);
@@ -100,12 +107,12 @@ body {
 	}
 }
 
-body :not(:is(h1, h2, h3, h4, h5, h6)) {
+body :not(:is(h1, h2, h3, h4, h5, h6, button, input, label)) {
 	line-height: calc(1em + 0.5rem);
 }
 
-body :is(h1, h2, h3, h4, h5, h6) {
-	line-height: 1.2;
+body :is(h1, h2, h3, h4, h5, h6, button, input, label) {
+	line-height: 1.1;
 	margin: var(--gap) 0 calc(var(--gap) / 2) 0;
 }
 
@@ -148,19 +155,17 @@ p {
 	margin: 1em 0 1em 0;
 }
 
-a {
-	color: inherit;
+a:not([class]) {
+	color: currentColor;
 	text-decoration: underline;
 	text-decoration-color: var(--color-link);
 	text-decoration-thickness: 2px;
-	transition: all var(--animation-duration);
+	text-decoration-skip-ink: auto;
 	cursor: pointer;
 }
 
 a:hover {
 	color: var(--color-link);
-	filter: brightness(var(--hover-brightness));
-	text-decoration-thickness: 3px;
 }
 
 a:focus {
@@ -313,6 +318,11 @@ dt {
 	font-weight: bold;
 }
 
+ul[role='list'],
+ol[role='list'] {
+	  list-style: none;
+}
+
 ol {
 	list-style-type: decimal;
 }
@@ -384,6 +394,11 @@ textarea {
 	outline: none;
 	border: 0.1em solid var(--color-border);
 }
+
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
 select {
 	color: var(--color-text);
 	background-color: var(--color-bg);
@@ -708,6 +723,10 @@ details summary:focus {
 
 summary {
 	display: list-item;
+}
+
+:target {
+  scroll-margin-block: 5ex;
 }
 
 /*
