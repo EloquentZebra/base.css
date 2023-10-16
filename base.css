@@ -279,12 +279,13 @@ var {
 	font-family: var(--font-mono);
 }
 
+pre, 
 pre > code,
 pre > samp {
 	display: block;
 	max-width: 100%;
-	margin: var(--gap) 0;
-	padding: var(--gap);
+	margin: calc(var(--gap) / 2) 0;
+	padding: calc(var(--gap) / 2);
 	box-decoration-break: clone;
 	overflow-x: auto;
 }
@@ -785,6 +786,10 @@ summary {
 
 .hidden {
 	display: none;
+}
+
+.no-scroll {
+	overflow-y: hidden;
 }
 
 .font-sans {
