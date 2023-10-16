@@ -87,7 +87,7 @@ html {
 }
 
 body {
-	min-height: 100vh;
+	min-height: 100svh;
 	color: var(--color-text);
 	font-size: var(--font-size);
 	background-color: var(--color-bg);
@@ -99,6 +99,7 @@ body {
 	overflow-x: hidden;
 	overflow-y: auto;
 	scrollbar-gutter: stable;
+	text-wrap: pretty;
 }
 
 @media (max-width: 768px) {
@@ -319,8 +320,12 @@ dt {
 }
 
 ul[role='list'],
-ol[role='list'] {
-	  list-style: none;
+ul[class],
+ol[role='list'],
+ol[class] {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 ol {
@@ -381,6 +386,7 @@ input {
 	outline: none;
 	border: 0.1em solid var(--color-border);
 }
+
 textarea {
 	color: var(--color-text);
 	background-color: var(--color-bg);
@@ -412,22 +418,27 @@ select {
 	outline: none;
 	border: 0.1em solid var(--color-border);
 }
+
 input[type="color"] {
 	min-height: 2rem;
 	padding: 0.5em;
 	cursor: pointer;
 }
+
 input[type="checkbox"],
 input[type="radio"] {
 	height: 1.2em;
 	width: 1em;
 }
+
 input[type="radio"] {
 	border-radius: 100%;
 }
+
 input {
 	vertical-align: top;
 }
+
 label {
 	vertical-align: middle;
 	margin-bottom: 0.25em;
@@ -440,15 +451,18 @@ button,
 textarea {
 	-webkit-appearance: none;
 }
+
 textarea {
 	display: block;
 	margin-right: 0;
 	resize: vertical;
 	width: 100%;
 }
+
 textarea:not([cols]) {
 	width: 100%;
 }
+
 textarea:not([rows]) {
 	min-height: 3em;
 	height: 8em;
@@ -726,7 +740,7 @@ summary {
 }
 
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block: 1rlh;
 }
 
 /*
@@ -734,12 +748,12 @@ summary {
  */
 
 .hide-on-mobile {
-	display: hidden;
+	display: block;
 }
 
 @media (max-width: 768px) {
 	.hide-on-mobile {
-		display: block;
+		display: none;
 	}
 }
 
