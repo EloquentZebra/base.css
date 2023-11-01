@@ -156,6 +156,10 @@ p {
 	margin: 1em 0 1em 0;
 }
 
+:is(a) {
+	cursor: pointer;
+}
+
 a:not([class]) {
 	color: currentColor;
 	text-decoration: underline;
