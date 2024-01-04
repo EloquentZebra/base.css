@@ -80,6 +80,15 @@
 	transition: all var(--animation-duration);
 }
 
+:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+:focus-visible {
+	outline: 0.1em solid currentColor;
+	outline-offset: 0.2em;
+}
+
 html {
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
