@@ -4,7 +4,7 @@
 	--border-radius: 0.25em;
 	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
 	--hover-brightness: 1.2;
-	--width-content: min(50ch, 100% - var(--gap) * 2); /* clamp(50ch, 75ch, 850px); */
+	--width-content: clamp(50ch, 75ch, 850px);
 	--gap: clamp(1rem, 6vw, 3rem);
 
 	--color: #B10DC9;
@@ -821,7 +821,8 @@ summary {
  */
 
 .container {
-	width: var(--width-content);
+	width: 95%;
+	max-width: var(--width-content);
 	margin-inline: auto;
 }
 
@@ -905,7 +906,7 @@ img.aspect-ratio-square {
 
 .content {
 	--full: minmax(var(--gap), 1fr);
-	--content: var(--width-content);
+	--content: min(50ch, 100% - var(--gap) * 2);
 	--popout: minmax(0, 2rem);
 	--feature: minmax(0, 5rem);
 
