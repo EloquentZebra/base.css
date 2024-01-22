@@ -4,7 +4,7 @@
 	--border-radius: 0.25em;
 	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
 	--hover-brightness: 1.2;
-	--width-content: clamp(50ch, 75ch, 850px);
+	--width-content: min(50ch, 100% - var(--gap) * 2); /* clamp(50ch, 75ch, 850px); */
 	--gap: clamp(1rem, 6vw, 3rem);
 
 	--color: #B10DC9;
@@ -118,13 +118,17 @@ body {
 	}
 }
 
+[id] {
+	scroll-margin-top: var(--gap);
+}
+
 body :not(:is(h1, h2, h3, h4, h5, h6, button, input, label)) {
 	line-height: calc(1em + 0.5rem);
 }
 
 body :is(h1, h2, h3, h4, h5, h6, button, input, label) {
 	line-height: 1.1;
-	margin: var(--gap) 0 calc(var(--gap) / 2) 0;
+	margin: var(--gap) 0 0 0;
 }
 
 body :is(h1, h2, h3, h4, h5, h6, caption, figcaption) {
@@ -206,15 +210,9 @@ img {
 img, picture, video, canvas, svg {
 	display: block;
 	max-inline-size: 100%;
-		max-block-size: 100%;
+	max-block-size: 100%;
 	border-radius: var(--border-radius);
 	margin: var(--gap) auto;
-}
-
-@supports (aspect-ratio: 1) {
-	img {
-		aspect-ratio: 3/2;
-	}
 }
 
 figure {
@@ -278,7 +276,7 @@ var {
 	font-size: 1em;
 	color: inherit;
 	border-radius: var(--border-radius);
-	display: inline-block;
+	width: fit-content;
 	margin: 0 0.1em;
 	padding: 0.1em 0.2em;
 	box-decoration-break: clone;
@@ -825,7 +823,7 @@ summary {
 .container {
 	width: 95%;
 	max-width: var(--width-content);
-	margin: 0 auto;
+	margin-inline: auto;
 }
 
 .container.wide {
@@ -890,11 +888,25 @@ summary {
 	width: 100%;
 }
 
+.aspect-ratio-hd {
+	aspect-ratio: 16 / 9;
+}
+
+.aspect-ratio-square {
+	aspect-ratio: 1;
+}
+
+img.aspect-ratio-square {
+	aspect-ratio: 1;
+	object-fit: cover;
+	max-block-size: 250px;
+}
+
 /* https://ryanmulligan.dev/blog/layout-breakouts */
 
 .content {
 	--full: minmax(var(--gap), 1fr);
-	--content: var(--width-content); /* min(50ch, 100% - var(--gap) * 2); */
+	--content: var(--width-content);
 	--popout: minmax(0, 2rem);
 	--feature: minmax(0, 5rem);
 
