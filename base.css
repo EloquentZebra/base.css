@@ -9,7 +9,8 @@
 
 	--color: #B10DC9;
 	--color-accent: #39CCCC;
-	accent-color: #39CCCC;
+	AccentColor: var(--color-accent);
+	AccentColorText: var(--color-text);
 	--color-highlight: #FFDC00;
 	--color-error: #d43939;
 	--color-success: #28bd14;
@@ -103,6 +104,7 @@ body {
 	background-color: var(--color-bg);
 	font-family: var(--font-sans);
 	font-size-adjust: cap-height 1;
+	font-variant-ligatures: common-ligatures; /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures */
 	text-rendering: optimizeLegibility;
 	padding: 0;
 	hyphens: auto;
