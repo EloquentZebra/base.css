@@ -103,7 +103,6 @@ body {
 	font-size: var(--font-size);
 	background-color: var(--color-bg);
 	font-family: var(--font-sans);
-	font-size-adjust: cap-height 1;
 	font-variant-ligatures: common-ligatures; /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures */
 	text-rendering: optimizeLegibility;
 	padding: 0;
