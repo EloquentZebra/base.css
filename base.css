@@ -241,6 +241,10 @@ figure:has(figcaption) {
 	border-radius: var(--border-radius);
 }
 
+figure:has(figcaption) :is(img, video) {
+	border-radius: var(--border-radius);
+}
+
 hr {
 	background-color: var(--color-text);
 	border: none;
