@@ -232,6 +232,7 @@ figure figcaption {
 	color: var(--color-text-muted);
 	font-size: var(--font-size-small);
 	font-style: italic;
+	padding-top: calc(var(--gap) / 4);
 }
 
 figure:has(figcaption) {
