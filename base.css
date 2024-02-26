@@ -243,6 +243,7 @@ figure:has(figcaption) {
 
 figure:has(figcaption) :is(img, video) {
 	border-radius: var(--border-radius);
+	overflow: hidden;
 }
 
 hr {
