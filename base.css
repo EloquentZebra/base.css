@@ -224,14 +224,20 @@ figure {
 
 figure :is(img, video) {
 	width: 100%;
-	margin-bottom: 0;
-	padding-bottom: 0;
+	margin: 0;
+	padding: 0;
 }
 
 figure figcaption {
 	color: var(--color-text-muted);
 	font-size: var(--font-size-small);
 	font-style: italic;
+}
+
+figure:has(figcaption) {
+	padding: calc(var(--gap) / 4);
+	background-color: var(--color-bg-secondary);
+	border-radius: var(--border-radius);
 }
 
 hr {
