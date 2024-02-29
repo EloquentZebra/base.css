@@ -693,6 +693,11 @@ summary {
 	display: list-item;
 }
 
+summary > p:where(:first-child, :last-child) {
+	margin: 0;
+	padding: 0;
+}
+
 details {
 	margin: var(--gap) auto;
 	padding: 0 var(--gap);
