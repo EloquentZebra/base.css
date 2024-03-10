@@ -90,6 +90,15 @@
 	outline-offset: 0.2em;
 }
 
+
+
+*:has(:target) {
+	background: var(--color-bg-secondary);
+	border: 0.1em solid var(--color);
+}
+
+
+
 html {
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
