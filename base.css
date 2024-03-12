@@ -523,6 +523,11 @@ input:focus {
 	border: 0.1em solid var(--color);
 	box-shadow: var(--shadow);
 }
+
+input:not([type="submit"]):focus {
+	outline: none;
+}
+
 select:focus {
 	border: 0.1em solid var(--color);
 	box-shadow: var(--shadow);
