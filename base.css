@@ -5,7 +5,7 @@
 	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
 	--hover-brightness: 1.2;
 	--width-content: clamp(50ch, 75ch, 850px);
-	--gap: clamp(1em, 6vw, 3em);
+	--gap: max(6vw, 1em);
 
 	--color: #09E85E;
 	--color-accent: #E80993;
@@ -140,7 +140,7 @@ body :not(:is(h1, h2, h3, h4, h5, h6, button, input, label)) {
 
 body :is(h1, h2, h3, h4, h5, h6, button, input, label) {
 	line-height: 1.1;
-	margin: 1em 0 0 0;
+	margin: var(--gap) 0 0 0;
 }
 
 body :is(h1, h2, h3, h4, h5, h6, caption, figcaption) {
@@ -179,7 +179,7 @@ h6 {
 }
 
 p {
-	margin: 1em 0 1em 0;
+	margin: var(--gap) 0;
 }
 
 :is(a) {
@@ -565,7 +565,7 @@ fieldset {
 	border: 0.1em solid var(--color-border);
 	border-radius: var(--border-radius);
 	margin: 0;
-	margin-bottom: 1em;
+	margin-bottom: var(--gap);
 	padding: 0.5em 1em;
 }
 legend {
@@ -586,7 +586,7 @@ input[type="range"]:focus {
 [type="reset"],
 [type="submit"],
 button {
-	padding: 0.5em 1em;
+	padding: calc(var(--gap) / 2) var(--gap);
 	margin-top: var(--gap);
 	color: var(--color-text);
 	background-color: var(--color);
@@ -737,7 +737,7 @@ details {
 }
 
 details > :last-child {
-	margin-bottom: 1em;
+	margin-bottom: var(--gap);
 }
 
 details::before {
@@ -760,7 +760,7 @@ details[open] {
 }
 
 details summary {
-	padding: 0.5em 1em 0.5em 0;
+	padding: calc(var(--gap) / 2) var(--gap) calc(var(--gap) / 2) 0;
 	display: block;
 	position: relative;
 	font-weight: bold;
@@ -878,11 +878,11 @@ summary {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	gap: 1em;
+	gap: var(--gap);
 }
 
 .row:not(:last-child) {
-	padding-bottom: 1em;
+	padding-bottom: var(--gap);
 }
 
 [class*="col"] {
@@ -912,7 +912,7 @@ summary {
 .media-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-auto-rows: minmax(1em, 10em);
+	grid-auto-rows: minmax(var(--gap), 10em);
 	grid-gap: var(--gap);
 	pointer-events: none;
 }
