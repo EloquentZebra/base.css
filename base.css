@@ -5,7 +5,7 @@
 	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
 	--hover-brightness: 1.2;
 	--width-content: clamp(50ch, 75ch, 850px);
-	--gap: max(6vw, 1em);
+	--gap: 1em;
 
 	--color: #09E85E;
 	--color-accent: #E80993;
