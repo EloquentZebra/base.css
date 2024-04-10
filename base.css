@@ -586,7 +586,7 @@ input[type="range"]:focus {
 [type="reset"],
 [type="submit"],
 button {
-	padding: calc(var(--gap) / 2) var(--gap);
+	padding: 0.5em 1em;
 	margin-top: var(--gap);
 	color: var(--color-text);
 	background-color: var(--color);
