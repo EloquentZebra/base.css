@@ -15,6 +15,7 @@
 	AccentColorText: var(--color);
 	--color-highlight: #FFDC00;
 	--color-error: #d43939;
+	--color-warning: #ffc107;
 	--color-success: #28bd14;
 
 	--color-bg: #ffffff;
