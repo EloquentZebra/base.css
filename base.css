@@ -142,7 +142,7 @@ body :not(:is(h1, h2, h3, h4, h5, h6, button, input, label)) {
 }
 
 body :is(h1, h2, h3, h4, h5, h6, button, input, label) {
-	line-height: 1.1;
+	line-height: 1;
 	margin: var(--gap) 0 0 0;
 }
 
@@ -595,7 +595,7 @@ button {
 	background-color: var(--color);
 	border-radius: var(--border-radius);
 	border: 0.1em solid transparent;
-	font-size: var(--font-size);
+	font-size: inherit;
 	line-height: 1;
 	text-align: center;
 	transition: opacity var(--animation-duration) ease;
