@@ -94,13 +94,12 @@
 }
 
 
-
+/*
 *:has(:target) {
 	background: var(--color-bg-secondary);
 	border: 0.1em solid var(--color);
 }
-
-
+*/
 
 html {
 	-moz-text-size-adjust: none;
