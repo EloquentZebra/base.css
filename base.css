@@ -69,10 +69,15 @@
 	all: revert;
 }
 
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+	all: unset;
+	display: revert;
+}
+
 *,
 *::before,
 *::after {
-	all: unset;
+	/* all: unset; */
 	display: revert;
 	box-sizing: border-box;
 	margin: 0;
@@ -181,10 +186,11 @@ p {
 
 :is(a) {
 	cursor: pointer;
+	color: var(--color-text);
+	font-size: inherit;
 }
 
 a:not([class]) {
-	color: currentColor;
 	text-decoration: underline;
 	text-decoration-color: var(--color-link);
 	text-decoration-thickness: 2px;
@@ -216,7 +222,7 @@ img {
 	object-fit: cover;
 }
 
-img, picture, video, canvas {
+img, picture, video, canvas, svg {
 	display: block;
 	max-inline-size: 100%;
 	max-block-size: 100%;
@@ -383,15 +389,15 @@ li > :where(ol, ul) {
 }
 
 dd::before {
-	content: "â†’ ";
+	content: "Ã¢â€ â€™ ";
 }
 
 q:before {
-	content: "Â«";
+	content: "Ã‚Â«";
 }
 
 q:after {
-	content: "Â»";
+	content: "Ã‚Â»";
 }
 
 blockquote {
