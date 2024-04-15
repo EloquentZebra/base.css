@@ -69,11 +69,6 @@
 	all: revert;
 }
 
-*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
-	all: unset;
-	display: revert;
-}
-
 *,
 *::before,
 *::after {
@@ -221,7 +216,7 @@ img {
 	object-fit: cover;
 }
 
-img, picture, video, canvas, svg {
+img, picture, video, canvas {
 	display: block;
 	max-inline-size: 100%;
 	max-block-size: 100%;
