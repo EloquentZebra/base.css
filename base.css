@@ -278,6 +278,17 @@ hr {
 	margin: var(--gap);
 }
 
+hr:after {
+  content:"";
+  background:inherit;
+  block-size: 2rem;
+  inline-size: 2rem;
+  margin:auto;
+  position:absolute;
+  inset:0;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='221.8' height='493.3' viewBox='0 0 221.8 493.3'%3E%3Cpath d='M18 46s14-14 28-20 21-16 45-16 43 15 58 30c0 13 6 22 12 32 0 0 24 6 30 69 0 0 21 6 3 109s-27 80-27 80 5 78 12 109-2 38-26 22c0 0-37 32-34-17s0-146-24-177c0 0-40-45-47-88s-12-59 13-97c0 0-5-20-8-24S31 44 24 44l-6 2Z'/%3E%3C/svg%3E%0A") 50%/auto 100% no-repeat;
+}
+
 abbr[title],
 dfn {
 	text-decoration: underline dotted;
