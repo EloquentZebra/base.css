@@ -97,7 +97,6 @@
 	outline-offset: 0.2em;
 }
 
-
 /*
 *:has(:target) {
 	background: var(--color-bg-secondary);
@@ -631,6 +630,8 @@ button {
 	transform: scale(1);
 	display: inline-block;
 	cursor: pointer;
+	text-box-trim: both;
+	text-box-edge: cap alphabetic;
 }
 
 .button.muted,
