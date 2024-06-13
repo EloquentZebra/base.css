@@ -430,266 +430,86 @@ blockquote cite {
  * FORMS
  */
 
-figcaption {
-	display: block;
-	width: 100%;
-	margin: var(--gap) 0;
-	color: var(--color-text-muted);
-	text-align: center;
-}
-fieldset,
-form {
-	border-radius: var(--border-radius);
-}
-form {
-	overflow: auto;
-	padding: var(--gap);
-	margin: 0 auto var(--gap);
-	/* background: var(--color-bg-secondary);*/
-}
-
-fieldset {
-	padding: calc(var(--gap) / 2) var(--gap);
-	border: 2px solid var(color-bg-secondary);
-	margin-bottom: var(--gap);
-}
-
-legend {
-	padding: 0 calc(var(--gap));
-	font-weight: 600;
-}
-
-label {
-	position: relative;
-	display: table;
-	margin: 0 0 var(--gap);
-}
-
-label:has(> :is(input, textarea, button)) {
-	  cursor: pointer;
-}
-
-label:has(> :is(input, textarea, select, button):disabled) {
-	color: var(--color-text-muted);
-	cursor: not-allowed;
-}
-
-label:has(> :is(input, textarea, select):required)::before {
-	position: absolute;
-	left: -0.6rem;
-	color: var(--color-warning);
-	content: "*";
-}
-
-label:has(> textarea) {
-	  display: block;
-}
-
-button,
 input,
 select,
 textarea {
-	display: block;
-	box-sizing: border-box;
-	border: 1px solid var(--color-border);
-	border-radius: var(--border-radius);
-	margin-top: 0.25rem;
-	background: var(--color-bg);
-	color: inherit;
-	cursor: pointer;
-	font-family: inherit;
+	border: 2px solid var(--color-border);
+	background-color: var(--color-bg);
+	border-radius: var(--color-radius);
+	font-familiy: inherit;
 	font-size: inherit;
-	line-height: 1.5;
-	transition: border-color var(--animation-duration);
 }
+
+input[type="text"],
+input[type="email"],
+select,
 textarea {
-	width: calc(100% - calc(var(--gap) * 2);
-	padding: var(--gap);
-	appearance: none;
-	cursor: text;
-	resize: none;
+	display: block;
+	width: 100%;
+	padding: calc(var(--gap) / 2) var(--gap);
 }
 
-input,
 textarea {
-	width: 100%;
+	min-height: 10rem;
 }
 
-:is(textarea, select):hover {
-	border-color: var(--color);
-}
 
-:is(input, textarea, select):disabled {
-	background-color: var(--color-bg-secondary);
-	cursor: not-allowed;
-}
-
-input:not(
-    [type="radio"],
-    [type="checkbox"],
-    [type="range"],
-    [type="submit"],
-    [type="image"]
-  ):user-invalid,
-	select:user-invalid,
-	textarea:user-invalid {
-	border: 1px solid var(--color-warning);
-}
-input:not(
-    [type="radio"],
-    [type="checkbox"],
-    [type="range"],
-    [type="submit"],
-    [type="image"]
-  ):user-valid,
-	select:user-valid,
-	textarea:user-valid {
-	border: 1px solid var(--color-success);
-}
-select {
-	width: 100%;
-	padding: 0.35rem 0.5rem;
-	text-transform: none;
-}
-input {
-	  appearance: none;
-}
-input:not(:disabled):hover {
-	border-color: var(--accent);
-}
-input:not([type="radio"], [type="checkbox"]) {
-	position: relative;
-	min-height: 1.5rem;
-	padding: 0.25rem 0.5rem;
-}
-input:is([type="radio"], [type="checkbox"]),
-input[type="checkbox"]::before {
-	display: inline-block;
-	width: 1rem;
-	height: 1rem;
-	margin: 0 0.25rem;
+input[type="radio"],
+input[type="checkbox"] {
+	height: 1.5em;
+	width: 1.5em;
 	vertical-align: middle;
 }
-input[type="checkbox"] {
-	border-radius: 0;
-}
+
 input[type="radio"] {
-	border-width: 2px;
 	border-radius: 50%;
 }
+
+
 input[type="radio"]:checked {
-	border-width: 0.25rem;
-	border-color: var(--color);
-}
-input[type="checkbox"]:checked {
-	border-color: var(--color);
-	background: var(--color);
-}
-input[type="checkbox"]:checked::before {
-  position: absolute;
-  margin: 0;
-  background: var(-color-bg);
-  content: "";
-  mask: center center/75%no-repeat;
-  mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNzgwMyAwLjIxOTYyNUMxMS45MjEgMC4zNjA0MjcgMTIgMC41NTEzMDUgMTIgMC43NTAzMTNDMTIgMC45NDkzMjEgMTEuOTIxIDEuMTQwMTkgMTEuNzgwMyAxLjI4MUw0LjUxODYgOC41NDA0MkM0LjM3Nzc1IDguNjgxIDQuMTg2ODIgOC43NiAzLjk4Nzc0IDguNzZDMy43ODg2NyA4Ljc2IDMuNTk3NzMgOC42ODEgMy40NTY4OSA4LjU0MDQyTDAuMjAxNjIyIDUuMjg2MkMwLjA2ODkyNzcgNS4xNDM4MyAtMC4wMDMzMDkwNSA0Ljk1NTU1IDAuMDAwMTE2NDkzIDQuNzYwOThDMC4wMDM1NTIwNSA0LjU2NjQzIDAuMDgyMzg5NCA0LjM4MDgxIDAuMjIwMDMyIDQuMjQzMjFDMC4zNTc2NjUgNC4xMDU2MiAwLjU0MzM1NSA0LjAyNjgxIDAuNzM3OTcgNC4wMjMzOEMwLjkzMjU4NCA0LjAxOTk0IDEuMTIwOTMgNC4wOTIxNyAxLjI2MzM0IDQuMjI0ODJMMy45ODc3NCA2Ljk0ODM1TDEwLjcxODYgMC4yMTk2MjVDMTAuODU5NSAwLjA3ODk5MjMgMTEuMDUwNCAwIDExLjI0OTUgMEMxMS40NDg1IDAgMTEuNjM5NSAwLjA3ODk5MjMgMTEuNzgwMyAwLjIxOTYyNVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=);
-}
-input:is([type="radio"], [type="checkbox"]):disabled {
-	  background-color: var(--color-bg-secondary);
-}
-input[type="range"] {
-	height: 0.5rem;
-	border: transparent;
-	margin: 0.75rem 0;
-	accent-color: var(--color);
-	appearance: auto;
-	background: var(--color-bg-secondary);
-}
-input[type="file"]::file-selector-button {
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  background: 0 0;
-  color: var(--color);
-  font: inherit;
-}
-input[type="file"]:hover::file-selector-button {
-  background: var(--color);
-  color: var(--color-text);
-}
-button,
-input:is([type="submit"], [type="reset"], [type="button"], [type="image"]) {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  margin: 0.25rem 0.125rem;
-  background: 0 0;
-  color: var(--color);
-  text-transform: none;
-  transition: background var(--animation-duration), color var(--animation-duration),
-    filter var(--animation-duration);
-}
-input:is([type="image"], [type="file"], [type="color"]) {
-  padding: 0.25rem;
-}
-:is(
-    button,
-    input:is([type="submit"], [type="reset"], [type="button"], [type="image"])
-  ):disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-:is(button, input)[type="reset"] {
-  color: var(--color-warning);
-}
-:is(
-    button,
-    input:is([type="submit"], [type="reset"], [type="button"], [type="image"])
-  ):not(:disabled):active {
-  filter: brightness(80%);
-}
-button[type]:not([type="button"]),
-input:is([type="submit"], [type="reset"]) {
-  border-color: currentColor;
-}
-:is(
-    button,
-    input:is([type="submit"], [type="reset"], [type="button"], [type="image"])
-  ):not(:disabled):active,
-:is(
-    button,
-    input:is([type="submit"], [type="reset"], [type="button"], [type="image"])
-  ):not(:disabled):hover {
-  border-color: transparent;
-  background: var(--color);
-  color: var(--color-text);
-}
-:is(button, input)[type="reset"]:not(:disabled):active,
-:is(button, input)[type="reset"]:not(:disabled):hover {
-  border-color: transparent;
-  background: var(--color);
-  color: var(--color-text);
+	background-image: radial-gradient(hsl(213, 73%, 50%) 40%, transparent calc(40% + 1px));
 }
 
-a.button:hover {
-	color: inherit;
-	filter: none;
+input[type="checkbox":checked {
+	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVQ4T6WTXQ2AMAwGDwdIQAISQAEWsIQCQAkWkIAEJJCSNCljP7Dtdblb26+rKDxVIU+uoAY2YMoRKNwC61/BAwbGP4IXLPP7KvDCVtAARyCRIKyCBRiAHtgdSRRWwQjMwOlIkrBtwZVIO5LzHZVMO7RwdohWIoIk7EtBJXIXfVkr8sUoki5Wtm3n6x4E/1yx4AI+qiERKNFzCwAAAABJRU5ErkJggg==") #FFFFFF;
 }
 
-.button:active,
-[type="button"]:active,
-[type="reset"]:active,
-[type="submit"]:active,
-button:active {
-	transform: scale(0.98);
-	outline: 0.1em solid var(--color);
-	outline-offset: 0.2em;
+input::placeholder,
+textarea::placeholder {
+  	opacity: 1; /* Firefox */
+	color: var(--color-text-muted):
 }
 
-input:disabled,
-button:disabled,
-input:disabled:hover,
-button:disabled:hover {
-	opacity: 0.4;
-	cursor: not-allowed;
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+	box-shadow: var(--shadow);
 }
+
+
+:where(button, .button, [type="submit"]) {
+	font-family: inherit;
+	font-size: inherit;
+	border-radius: var(--border-radius);
+	border: 2px solid var(--color);
+	background-color: var(--color);
+	cursor: pointer;
+	padding: calc(var(--gap) / 2) var(--gap);
+}
+
+:where(button, .button, [type="submit"]):hover {
+	box-shadow: var(--shadow);
+	transition: all ease-in var(--animation-duration);
+}
+
+:where(button, .button, [type="submit"]):active {
+	box-shadow: none;
+	transform: scale(0.95);
+	transition: all ease-in var(--animation-duration);
+}
+
+
 
 /*
  * TABLE
