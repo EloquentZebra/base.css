@@ -467,44 +467,8 @@ textarea:not([rows]) {
 	min-height: 10em;
 }
 
-select {
-	color: var(--color-text);
-	background-color: var(--color-bg);
-	font-family: inherit;
-	font-size: inherit;
-	margin-right: 0.25em;
-	margin-bottom: 0.25em;
-	padding: 0.5em;
-	border: none;
-	border-radius: var(--border-radius);
-	outline: none;
-	border: 0.1em solid var(--color-border);
-}
-
-input[type="color"] {
-	min-height: 2rem;
-	padding: 0.5em;
-	cursor: pointer;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	height: 1.2em;
-	width: 1em;
-}
-
-input[type="radio"] {
-	border-radius: 100%;
-}
-
 input {
 	vertical-align: top;
-}
-
-label {
-	vertical-align: middle;
-	margin-bottom: 0.25em;
-	display: inline-block;
 }
 
 input:not([type="checkbox"]):not([type="radio"]),
@@ -529,20 +493,6 @@ textarea:not([cols]) {
 textarea:not([rows]) {
 	min-height: 3em;
 	height: 8em;
-}
-
-select {
-	padding-right: 2em;
-}
-
-select::-ms-expand {
-	display: none;
-}
-
-select[multiple] {
-	padding-right: 0.5em;
-	background-image: none;
-	overflow-y: auto;
 }
 
 input:focus {
@@ -598,12 +548,6 @@ fieldset {
 legend {
 	font-size: 0.9em;
 	font-weight: 600;
-}
-
-input[type="range"] {
-	margin: 0.5em 0;
-	padding: 0.5em 0;
-	background: transparent;
 }
 
 input[type="range"]:focus {
