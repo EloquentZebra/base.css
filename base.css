@@ -435,7 +435,7 @@ select {
 	display: block;
 }
 
-input {
+input:not([type="checkbox"]):not([type="radio"]) {
 	width: 100%;
 	color: var(--color-text);
 	background-color: var(--color-bg);
