@@ -514,7 +514,7 @@ textarea:focus {
 }
 
 
-:where(button, .button, [type="submit"]) {
+:is(button, .button, [type="submit"]) {
 	font-family: inherit;
 	font-size: inherit;
 	border-radius: var(--border-radius);
@@ -524,12 +524,12 @@ textarea:focus {
 	padding: calc(var(--gap) / 2) var(--gap);
 }
 
-:where(button, .button, [type="submit"]):hover {
+:is(button, .button, [type="submit"]):hover {
 	box-shadow: var(--shadow);
 	transition: all ease-in var(--animation-duration);
 }
 
-:where(button, .button, [type="submit"]):active {
+:is(button, .button, [type="submit"]):active {
 	box-shadow: none;
 	transform: scale(0.95);
 	transition: all ease-in var(--animation-duration);
