@@ -486,6 +486,18 @@ input[type="checkbox"]:checked {
 	background-size: 1.25em 1.25em;
 }
 
+
+input[type="checkbox"]:not(:checked)+label:before,
+input[type="checkbox"]:checked+label:before {
+  content: '';
+  position: absolute;
+  margin-left: -1.5em;
+  margin-top: -0.5em;
+  width: 2em;
+  height: 2em;
+  background: transparent;
+}
+
 input::placeholder,
 textarea::placeholder {
   	opacity: 1; /* Firefox */
