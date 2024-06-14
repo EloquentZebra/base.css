@@ -442,6 +442,15 @@ textarea {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="time"],
+input[type="url"],
 select,
 textarea {
 	display: block;
@@ -472,6 +481,9 @@ input[type="radio"]:checked {
 
 input[type="checkbox"]:checked {
 	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVQ4T6WTXQ2AMAwGDwdIQAISQAEWsIQCQAkWkIAEJJCSNCljP7Dtdblb26+rKDxVIU+uoAY2YMoRKNwC61/BAwbGP4IXLPP7KvDCVtAARyCRIKyCBRiAHtgdSRRWwQjMwOlIkrBtwZVIO5LzHZVMO7RwdohWIoIk7EtBJXIXfVkr8sUoki5Wtm3n6x4E/1yx4AI+qiERKNFzCwAAAABJRU5ErkJggg==") #FFFFFF;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 1.25em 1.25em;
 }
 
 input::placeholder,
