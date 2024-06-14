@@ -402,15 +402,15 @@ li > :where(ol, ul) {
 }
 
 dd::before {
-	content: "Ã¢â€ â€™ ";
+	content: "ÃƒÂ¢Ã¢â‚¬ Ã¢â‚¬â„¢ ";
 }
 
 q:before {
-	content: "Ã‚Â«";
+	content: "Ãƒâ€šÃ‚Â«";
 }
 
 q:after {
-	content: "Ã‚Â»";
+	content: "Ãƒâ€šÃ‚Â»";
 }
 
 blockquote {
@@ -470,14 +470,14 @@ input[type="radio"]:checked {
 	background-image: radial-gradient(hsl(213, 73%, 50%) 40%, transparent calc(40% + 1px));
 }
 
-input[type="checkbox":checked {
+input[type="checkbox"]:checked {
 	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVQ4T6WTXQ2AMAwGDwdIQAISQAEWsIQCQAkWkIAEJJCSNCljP7Dtdblb26+rKDxVIU+uoAY2YMoRKNwC61/BAwbGP4IXLPP7KvDCVtAARyCRIKyCBRiAHtgdSRRWwQjMwOlIkrBtwZVIO5LzHZVMO7RwdohWIoIk7EtBJXIXfVkr8sUoki5Wtm3n6x4E/1yx4AI+qiERKNFzCwAAAABJRU5ErkJggg==") #FFFFFF;
 }
 
 input::placeholder,
 textarea::placeholder {
   	opacity: 1; /* Firefox */
-	color: var(--color-text-muted):
+	color: var(--color-text-muted);
 }
 
 input:focus,
