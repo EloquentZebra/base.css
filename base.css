@@ -196,10 +196,8 @@ body {
 	overflow-y: auto;
 	scrollbar-gutter: stable;
 	text-wrap: pretty;
-}
 
-@media (max-width: 768px) {
-	body {
+	@media (width < 800px) {
 		overflow-y: auto;
 	}
 }
@@ -771,10 +769,7 @@ summary {
 
 .hide-on-mobile {
 	display: block;
-}
-
-@media (max-width: 768px) {
-	.hide-on-mobile {
+	@media (width < 800px) {
 		display: none;
 	}
 }
@@ -791,7 +786,7 @@ summary {
 	text-align: right;
 }
 
-@media (max-width: 768px) {
+@media (width < 800px) {
 	.text-left-on-mobile {
 		text-align: left;
 	}
@@ -844,6 +839,11 @@ summary {
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	gap: var(--gap);
+
+	@media (width < 800px) {
+		display: block;
+		margin: 0;
+	}
 }
 
 .row:not(:last-child) {
@@ -853,23 +853,16 @@ summary {
 [class*="col"] {
 	margin: 0;
 	padding: 0;
-}
 
-.col {
-	flex: 1;
-}
-
-@media (max-width: 768px) {
-	.row {
-		display: block;
-		margin: 0;
-	}
-
-	[class*="col"] {
+	@media (width < 800px) {
 		width: 100%;
 		margin: 0 0 var(--gap) 0;
 		padding: 0;
 	}
+}
+
+.col {
+	flex: 1;
 }
 
 /* Media grid */
@@ -897,11 +890,17 @@ summary {
 	width: 100%;
 }
 
+/* Aspect Ratios */
+
 .aspect-ratio-hd {
+	width: 100%;
+	object-fit: cover;
 	aspect-ratio: 16 / 9;
 }
 
 .aspect-ratio-square {
+	width: 100%;
+	object-fit: cover;
 	aspect-ratio: 1;
 }
 
