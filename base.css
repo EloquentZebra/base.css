@@ -534,7 +534,7 @@ input[type="radio"] {
 
 
 input[type="radio"]:checked {
-	background-image: radial-gradient(hsl(213, 73%, 50%) 40%, transparent calc(40% + 1px));
+	background-image: radial-gradient(var(--color-link) 40%, transparent calc(40% + 1px));
 }
 
 input[type="checkbox"]:checked {
