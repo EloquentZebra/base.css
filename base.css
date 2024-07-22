@@ -88,24 +88,75 @@
 	initial-value: var(--color-text); 
 }
 
+@property --border-radius {
+	syntax: '<lenght>';
+	inherits: true;
+	initial-value: 0.25rem;
+}
+
+@property --shadow-1 {
+	syntax: '*';
+	inherits: true;
+	initial-value: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
+}
+
+@property --shadow-2 {
+	syntax: '*';
+	inherits: true;
+	initial-value: 0 2px 6px hsla(0, 0%, 0%, 0.2);;
+}
+
+@property --width-content {
+	syntax: '*';
+	inherits: true;
+	initial-value: clamp(50ch, 75ch, 850px);
+}
+
+@property --gap {
+	syntax: '<lenght>';
+	inherits: true;
+	initial-value: 1rem;
+}
+
+@property --font-sans {
+	syntax: '*';
+	inherits: true;
+	initial-value: system-ui, ui-sans, sans-serif;
+}
+
+@property --font-serif {
+	syntax: '*';
+	inherits: true;
+	initial-value: ui-serif, serif;
+}
+
+@property --font-mono {
+	syntax: '*';
+	inherits: true;
+	initial-value: ui-monospace, monospace;
+}
+
+@property --font-size {
+	syntax: '*';
+	inherits: true;
+	initial-value: clamp(1.1rem, calc(1.1rem + .25vw), 1.75rem);
+}
+
+@property --font-size-small {
+	syntax: '<percentage>';
+	inherits: true;
+	initial-value: 80%;
+}
+
+@property --animation-duration {
+	syntax: '<time>';
+	inherits: true;
+	initial-value: 0.2s;
+}
+
 :root {
 	color-scheme: light dark;
-
-	--border-radius: 0.25rem;
-	--shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
-	--shadow-1: var(--shadow);
-	--shadow-2: 0 2px 6px hsla(0, 0%, 0%, 0.2);
-	--hover-brightness: 1.2;
-	--width-content: clamp(50ch, 75ch, 850px);
-	--gap: 1rem;
-	
-	--font-sans: system-ui, ui-sans, sans-serif;
-	--font-serif: ui-serif, serif;
-	--font-mono: ui-monospace, monospace;
-	--font-size: clamp(1.1rem, calc(1.1rem + .25vw), 1.75rem);
-	--font-size-small: 0.8em;
-
-	--animation-duration: 0.2s;
+	--shadow: --var(shadow-1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -114,9 +165,6 @@
 		--color-bg-secondary: #5c5e62;
 		--color-text: #eeeeee;
 		--color-text-muted: #a2a3a5;
-
-		--form-text: var(--color-white);
-		--shadow: box-shadow: 0 1.5px 4px rgba(255, 255, 255, 0.24), 0 1.5px 0.25em rgba(255, 255, 255, 0.12);
 	}
 
 	body.enable-dm img:not([src*=".svg"]) {
