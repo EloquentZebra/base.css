@@ -1,3 +1,9 @@
+@property --color {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #8AC926; 
+}
+
 @property --color-accent-1 {
 	syntax: '<color>';
 	inherits: true;
@@ -85,7 +91,7 @@
 @property --color-border {
 	syntax: '<color>';
 	inherits: true;
-	initial-value: var(--color-text); 
+	initial-value: #333333; 
 }
 
 @property --border-radius {
@@ -113,7 +119,7 @@
 }
 
 @property --gap {
-	syntax: '<lenght>';
+	syntax: '*';
 	inherits: true;
 	initial-value: 1rem;
 }
