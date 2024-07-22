@@ -95,7 +95,7 @@
 }
 
 @property --border-radius {
-	syntax: '<lenght>';
+	syntax: '*';
 	inherits: true;
 	initial-value: 0.25rem;
 }
