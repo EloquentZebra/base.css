@@ -1,3 +1,93 @@
+@property --color-accent-1 {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #8AC926; 
+}
+
+@property --color-accent-2 {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #FFD166; 
+}
+
+@property --color-accent-3 {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #EF476F; 
+}
+
+@property --color-accent-4 {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #118AB2; 
+}
+
+@property --color-accent-5 {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #073B4C; 
+}
+
+@property --color-highlight {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #FFDC00; 
+}
+
+@property --color-error {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #d43939; 
+}
+
+@property --color-warning {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #ffc107; 
+}
+
+@property --color-success {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #28bd14; 
+}
+
+@property --color-bg {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #ffffff; 
+}
+
+@property --color-bg-secondary {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #eeeeee; 
+}
+
+@property --color-text {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #333333; 
+}
+
+@property --color-text-muted {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #a2a3a5; 
+}
+
+@property --color-link {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #0076d1; 
+}
+
+@property --color-border {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: var(--color-text); 
+}
+
 :root {
 	color-scheme: light dark;
 
@@ -8,28 +98,7 @@
 	--hover-brightness: 1.2;
 	--width-content: clamp(50ch, 75ch, 850px);
 	--gap: 1rem;
-
-	--color-accent-1: #8AC926;
-	--color-accent-2: #FFD166;
-	--color-accent-3: #EF476F;
-	--color-accent-4: #118AB2;
-	--color-accent-5: #073B4C;
-
-	--color: var(--color-accent-1);
 	
-	--color-highlight: #FFDC00;
-	--color-error: #d43939;
-	--color-warning: #ffc107;
-	--color-success: #28bd14;
-
-	--color-bg: #ffffff;
-	--color-bg-secondary: #eee;
-
-	--color-text: #333333;
-	--color-text-muted: #a2a3a5;
-	--color-link: #0076d1;
-	--color-border: var(--color-text);
-
 	--font-sans: system-ui, ui-sans, sans-serif;
 	--font-serif: ui-serif, serif;
 	--font-mono: ui-monospace, monospace;
