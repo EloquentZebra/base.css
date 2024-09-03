@@ -163,6 +163,8 @@
 :root {
 	color-scheme: light dark;
 	--shadow: --var(shadow-1);
+	--gap: 1rem;
+	--border-radius: 4px;
 }
 
 @media (prefers-color-scheme: dark) {
