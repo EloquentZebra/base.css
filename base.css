@@ -244,6 +244,7 @@ body {
 	background-color: var(--color-bg);
 	font-family: var(--font-sans);
 	font-variant-ligatures: common-ligatures; /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures */
+	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	padding: 0;
 	hyphens: auto;
@@ -252,7 +253,7 @@ body {
 	overflow-y: auto;
 	scrollbar-gutter: stable;
 	text-wrap: pretty;
-
+	
 	@media (width < 800px) {
 		overflow-y: auto;
 	}
