@@ -313,7 +313,7 @@ p {
 
 :is(a) {
 	cursor: pointer;
-	color: var(--color-text);
+	color: inherit;
 	font-size: inherit;
 }
 
