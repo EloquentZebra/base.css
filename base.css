@@ -675,6 +675,7 @@ table {
 	font-variant-numeric: tabular-nums;
 	border-spacing: 0;
 	text-indent: 0;
+	margin-block-end: var(--gap);
 }
 
 thead {
