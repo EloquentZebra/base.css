@@ -885,8 +885,7 @@ summary {
  */
 
 .container {
-	width: 95%;
-	max-width: var(--width-content);
+	width: var(--width-content);
 	margin-inline: auto;
 }
 
