@@ -248,6 +248,10 @@ body {
 	text-rendering: optimizeLegibility;
 	padding: 0;
 	hyphens: auto;
+	 hyphenate-limit-chars: 7 4 3;
+	hyphenate-limit-lines: 2;
+	hyphenate-limit-zone: 8%;
+	hyphenate-limit-last: always;
 	tab-size: 4;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -259,6 +263,10 @@ body {
 	@media (width < 800px) {
 		overflow-y: auto;
 	}
+}
+
+td, math, time[datetime*=":"] {
+    font-variant-numeric: tabular-nums lining-nums slashed-zero;    
 }
 
 [id] {
@@ -288,6 +296,11 @@ p, h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 2.5em;
+	font-variant-ligatures: discretionary-ligatures; 
+}
+
+h1.uppercase {
+	 font-variant-caps: titling-caps;
 }
 
 h2 {
@@ -481,17 +494,21 @@ small,
 sub,
 sup {
 	font-size: var(--font-size-small);
-	line-height: 0;
-	position: relative;
 	vertical-align: baseline;
 }
 
-sub {
-	bottom: -0.25em;
+sub, .sub {
+	vertical-align: baseline;
+	font-size: 100%;
+	line-height: inherit;
+	font-variant-position: sub;
 }
 
-sup {
-	top: -0.5em;
+sup, .sup {
+	vertical-align: baseline;
+	font-size: 100%;
+	line-height: inherit;
+	font-variant-position: super;
 }
 
 dt {
@@ -526,13 +543,12 @@ dt {
 dd::before {
 	content: "→";
 }
-
-q:before {
-	content: "«";
+q::before {
+	content: open-quote;
 }
 
-q:after {
-	content: "»";
+q::after {
+	content: close-quote;
 }
 
 blockquote {
