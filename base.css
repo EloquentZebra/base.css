@@ -115,7 +115,7 @@
 @property --width-content {
 	syntax: '*';
 	inherits: true;
-	initial-value: clamp(50ch, 75ch, 850px);
+	initial-value: 850px;
 }
 
 @property --gap {
@@ -901,7 +901,8 @@ summary {
  */
 
 .container {
-	width: var(--width-content);
+	width: 95%;
+	max-width: var(--width-content);
 	margin-inline: auto;
 }
 
