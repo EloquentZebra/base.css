@@ -327,7 +327,7 @@ h6 {
 }
 
 p {
-	margin-block-end: var(--gap);
+	margin-block: var(--gap);
 }
 
 :is(a) {
