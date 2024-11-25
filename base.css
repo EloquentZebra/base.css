@@ -203,6 +203,70 @@
 	display: revert;
 }
 
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+	display: block;
+}
+
+:where(img, svg, video) {
+	block-size: auto;
+	max-inline-size: 100%;
+}
+
+:where(svg) {
+	stroke: none;
+	fill: currentColor;
+}
+
+/* Make it clear that interactive elements are interactive */
+:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
+	cursor: pointer;
+	touch-action: manipulation;
+}
+:where(input[type="file"]) {
+	cursor: auto;
+}
+:where(input[type="file"])::-webkit-file-upload-button,
+:where(input[type="file"])::file-selector-button {
+	cursor: pointer;
+}
+
+/* SVG's without a fill attribute */
+:where(svg):where(:not([fill])) {
+	/* Remove fill and set stroke colour to the inherited font colour */
+	stroke: currentColor;
+	fill: none;
+	/* Rounded stroke */
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+/* Set a size for SVG's without a width attribute */
+:where(svg):where(:not([width])) {
+	inline-size: 5rem;
+}
+
+*:where(:not(fieldset, progress, meter)) {
+	border-width: 0;
+	border-style: solid;
+	background-origin: border-box;
+	background-repeat: no-repeat;
+}
+
+/* Animate focus outline */
+@media (prefers-reduced-motion: no-preference) {
+	:focus-visible {
+		transition: outline-offset 145ms cubic-bezier(0.25, 0, 0.4, 1);
+	}
+	
+	:where(:not(:active)):focus-visible {
+		transition-duration: 0.25s;
+	}
+}
+
+:where(:not(:active)):focus-visible {
+	outline-offset: 5px;
+}
+
 *,
 *::before,
 *::after {
@@ -222,6 +286,17 @@
 	outline-offset: 0.2em;
 }
 
+/* Make sure users can't select button text */
+:where(button, button[type], input[type="button"], input[type="submit"], input[type="reset"]),
+:where(input[type="file"])::-webkit-file-upload-button,
+:where(input[type="file"])::file-selector-button {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	user-select: none;
+	text-align: center;
+}
+
+
 /*
 *:has(:target) {
 	background: var(--color-bg-secondary);
@@ -235,10 +310,18 @@ html {
 	text-size-adjust: none;
 	font-size: var(--font-size);
 	hanging-punctuation: first allow-end last;
+	block-size: 100%;
+}
+
+/* Smooth scrolling for users that don't prefer reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+	html:focus-within {
+		scroll-behavior: smooth;
+	}
 }
 
 body {
-	min-height: 100svh;
+	min-block-size: 100%;
 	color: var(--color-text);
 	font-size: inherit;
 	background-color: var(--color-bg);
@@ -274,7 +357,7 @@ td, math, time[datetime*=":"] {
 }
 
 body :not(:where(h1, h2, h3, h4, h5, h6, button, input, label)) {
-	line-height: 1.5;
+	line-height: calc(0.25rem + 1em + 0.25rem);
 }
 
 body :where(h1, h2, h3, h4, h5, h6, button, input, label) {
