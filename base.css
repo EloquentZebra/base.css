@@ -838,6 +838,11 @@ tfoot th {
 
 summary {
 	display: list-item;
+	position: relative;
+}
+
+summary::marker, summary::-webkit-details-marker {
+   color: transparent;
 }
 
 summary > p:where(:first-child, :last-child) {
@@ -889,21 +894,18 @@ details summary {
 	cursor: pointer;
 }
 
-details summary::before, summary::after {
-	width: 0.75em;
-	height: 2px;
+summary::after {
+	content:  "+"; 
 	position: absolute;
-	top: 50%;
-	right: 0;
-	content: '';
-	background-color: var(--color-text);
-	text-align: right;
-	transform: translateY(-50%);
-	transition: transform 0.2s ease-in-out;
-}
+	font-size: 2em;
+	font-weight: bold; 
+	right: var(--gap);
+	top: .2em;
+	transition: all var(--animation-duration);
+} 
 
-details summary::after {
-	transform: translateY(-50%) rotate(90deg);
+details[open] > summary::after {
+	transform: translate(5px,0) rotate(45deg);
 }
 
 details summary:focus {
