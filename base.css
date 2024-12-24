@@ -962,9 +962,12 @@
 
 	.card {
 		--border-radius: 4px;
+		--color-border: #e5e7eb;
+		@media (prefers-color-scheme: dark) {
+			--color-border: #3a3a3c;	
+		}
 
 		background-color: var(--color-bg);
-
 		border-radius: var(--border-radius);
 		border-left: 1px solid var(--color-border);
 		border-top: 0.2em solid var(--color);
