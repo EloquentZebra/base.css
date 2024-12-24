@@ -1,7 +1,9 @@
+@layer reset, defaults, components, utilities;
+
 @property --color {
 	syntax: '<color>';
 	inherits: true;
-	initial-value: #8AC926; 
+	initial-value: #FFD166; 
 }
 
 @property --color-accent-1 {
@@ -159,8 +161,6 @@
 	inherits: true;
 	initial-value: 0.2s;
 }
-
-@layer reset, defaults, components, utilities;
 
 @layer reset {
 	:where([hidden]) {
@@ -952,6 +952,51 @@
 
 	.col {
 		flex: 1;
+	}
+
+	.card {
+		--border-radius: 4px;
+
+		background-color: var(--color-bg);
+
+		border-radius: var(--border-radius);
+		border-left: 1px solid var(--color-border);
+		border-top: 0.2em solid var(--color);
+		border-right: 1px solid var(--color-border);
+		border-bottom: 1px solid var(--color-border);
+
+		box-shadow: var(--shadow-2);
+
+		& .card-title {
+			font-weight: 700;
+			text-align: center;
+			background-color: #f9fafb;
+			background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f3f4f6' fill-opacity='0.75' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+			padding: 0.25em 0;
+
+			& p {
+				margin: 0;
+			}
+			
+			@media (prefers-color-scheme: dark) {
+				background-color: #232426;
+				background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231c1c1e' fill-opacity='0.75' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+			}
+		}
+
+		& .card-content {
+			padding: var(--gap);
+
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--gap);
+			justify-content: center;
+			vertical-align: center;
+
+			@media (width < 800px) {
+				display: block;
+			}
+		}
 	}
 }
 
