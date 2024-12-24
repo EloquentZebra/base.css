@@ -267,6 +267,10 @@
 }
 
 @layer defaults {
+	:root {
+		--gap: 1rem;
+	}
+	
 	::selection {
 		color: var(--color-bg);
 		background-color: var(--color-text);
