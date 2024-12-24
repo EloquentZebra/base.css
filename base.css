@@ -162,6 +162,10 @@
 	        inherits: true;
 	        initial-value: 1rem;
 	}
+	
+	    :root {
+	        --gap: 1rem; /* Fallback */
+	}
 }
 
 @layer reset {
