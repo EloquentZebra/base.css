@@ -1,165 +1,167 @@
-@layer reset, defaults, components, utilities;
+@layer variables, reset, defaults, components, utilities;
 
-@property --color {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #FFD166; 
-}
+@layer variables {
+	@property --color {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #FFD166; 
+	}
 
-@property --color-accent-1 {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #8AC926; 
-}
+	@property --color-accent-1 {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #8AC926; 
+	}
 
-@property --color-accent-2 {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #FFD166; 
-}
+	@property --color-accent-2 {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #FFD166; 
+	}
 
-@property --color-accent-3 {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #EF476F; 
-}
+	@property --color-accent-3 {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #EF476F; 
+	}
 
-@property --color-accent-4 {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #118AB2; 
-}
+	@property --color-accent-4 {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #118AB2; 
+	}
 
-@property --color-accent-5 {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #073B4C; 
-}
+	@property --color-accent-5 {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #073B4C; 
+	}
 
-@property --color-highlight {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #FFDC00; 
-}
+	@property --color-highlight {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #FFDC00; 
+	}
 
-@property --color-error {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #d43939; 
-}
+	@property --color-error {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #d43939; 
+	}
 
-@property --color-warning {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #ffc107; 
-}
+	@property --color-warning {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #ffc107; 
+	}
 
-@property --color-success {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #28bd14; 
-}
+	@property --color-success {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #28bd14; 
+	}
 
-@property --color-bg {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #ffffff; 
-}
+	@property --color-bg {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #ffffff; 
+	}
 
-@property --color-bg-secondary {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #eeeeee; 
-}
+	@property --color-bg-secondary {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #eeeeee; 
+	}
 
-@property --color-text {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #333333; 
-}
+	@property --color-text {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #333333; 
+	}
 
-@property --color-text-muted {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #a2a3a5; 
-}
+	@property --color-text-muted {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #a2a3a5; 
+	}
 
-@property --color-link {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #0076d1; 
-}
+	@property --color-link {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #0076d1; 
+	}
 
-@property --color-border {
-	syntax: '<color>';
-	inherits: true;
-	initial-value: #333333; 
-}
+	@property --color-border {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #333333; 
+	}
 
-@property --border-radius {
-	syntax: '<length>';
-	inherits: true;
-	initial-value: 0.25rem;
-}
+	@property --border-radius {
+		syntax: '<length>';
+		inherits: true;
+		initial-value: 0.25rem;
+	}
 
-@property --shadow-1 {
-	syntax: '*';
-	inherits: true;
-	initial-value: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
-}
+	@property --shadow-1 {
+		syntax: '*';
+		inherits: true;
+		initial-value: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 0.25em rgba(0, 0, 0, 0.12);
+	}
 
-@property --shadow-2 {
-	syntax: '*';
-	inherits: true;
-	initial-value: 0 2px 6px hsla(0, 0%, 0%, 0.2);;
-}
+	@property --shadow-2 {
+		syntax: '*';
+		inherits: true;
+		initial-value: 0 2px 6px hsla(0, 0%, 0%, 0.2);;
+	}
 
-@property --width-content {
-	syntax: '*';
-	inherits: true;
-	initial-value: 850px;
-}
+	@property --width-content {
+		syntax: '*';
+		inherits: true;
+		initial-value: 850px;
+	}
 
-@property --gap {
-	syntax: '<length>';
-	inherits: true;
-	initial-value: 1rem;
-}
+	@property --gap {
+		syntax: '<length>';
+		inherits: true;
+		initial-value: 1rem;
+	}
 
-@property --font-sans {
-	syntax: '*';
-	inherits: true;
-	initial-value: system-ui, ui-sans, sans-serif;
-}
+	@property --font-sans {
+		syntax: '*';
+		inherits: true;
+		initial-value: system-ui, ui-sans, sans-serif;
+	}
 
-@property --font-serif {
-	syntax: '*';
-	inherits: true;
-	initial-value: ui-serif, serif;
-}
+	@property --font-serif {
+		syntax: '*';
+		inherits: true;
+		initial-value: ui-serif, serif;
+	}
 
-@property --font-mono {
-	syntax: '*';
-	inherits: true;
-	initial-value: ui-monospace, monospace;
-}
+	@property --font-mono {
+		syntax: '*';
+		inherits: true;
+		initial-value: ui-monospace, monospace;
+	}
 
-@property --font-size {
-	syntax: '*';
-	inherits: true;
-	initial-value: clamp(1.1rem, calc(1.1rem + .25vw), 1.75rem);
-}
+	@property --font-size {
+		syntax: '*';
+		inherits: true;
+		initial-value: clamp(1.1rem, calc(1.1rem + .25vw), 1.75rem);
+	}
 
-@property --font-size-small {
-	syntax: '<percentage>';
-	inherits: true;
-	initial-value: 80%;
-}
+	@property --font-size-small {
+		syntax: '<percentage>';
+		inherits: true;
+		initial-value: 80%;
+	}
 
-@property --animation-duration {
-	syntax: '<time>';
-	inherits: true;
-	initial-value: 0.2s;
+	@property --animation-duration {
+		syntax: '<time>';
+		inherits: true;
+		initial-value: 0.2s;
+	}
 }
 
 @layer reset {
