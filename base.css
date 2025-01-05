@@ -102,6 +102,10 @@
 		inherits: true;
 		initial-value: 0.25rem;
 	}
+	
+:root {
+	--border-radius: 0.25rem;
+}	
 
 	@property --shadow-1 {
 		syntax: '*';
@@ -151,22 +155,21 @@
 		initial-value: 80%;
 	}
 
-	@property --animation-duration {
+@property --animation-duration {
 		syntax: '<time>';
 		inherits: true;
 		initial-value: 0.2s;
 	}
 
-	@property --gap {
-	        syntax: '<length>';
-	        inherits: true;
+@property --gap {
+	syntax: '<length>';
+	inherits: true;
 	        initial-value: 1rem;
 	}
 	
-	    :root {
-	        --gap: 1rem; /* Fallback */
+:root {
+	--gap: 1rem; /* Fallback */
 	}
-}
 
 @layer reset {
 	:where([hidden]) {
@@ -236,6 +239,12 @@
 			transition-duration: var(--animation-duration);
 		}
 	}
+
+@media (prefers-reduced-data: reduce) {
+  img, video {
+    display: none;
+  }
+}
 
 	:where(:not(:active)):focus-visible {
 		outline-offset: 5px;
@@ -318,6 +327,7 @@
 		text-wrap: pretty;
 		text-orientation: upright;
 		writing-mode: horizontal-tb;
+		accent-color: var(--color);
 		
 		@media (width < 800px) {
 			overflow-y: auto;
