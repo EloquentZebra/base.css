@@ -668,7 +668,7 @@
 		display: block;
 		width: 100%;
 		padding: calc(var(--gap) / 2) var(--gap);
-		line-height: 1;
+		line-height: 1cap;
 	}
 
 	textarea {
