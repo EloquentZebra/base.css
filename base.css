@@ -98,14 +98,10 @@
 	}
 
 	@property --border-radius {
-		syntax: '<length>';
+		syntax: '*>';
 		inherits: true;
 		initial-value: 0.25rem;
 	}
-	
-	:root {
-		--border-radius: 0.25rem;
-	}	
 
 	@property --shadow-1 {
 		syntax: '*';
@@ -162,13 +158,9 @@
 	}
 
 	@property --gap {
-	syntax: '<length>';
-	inherits: true;
-	        initial-value: 1rem;
-	}
-	
-	:root {
-	--gap: 1rem; /* Fallback */
+		syntax: '*';
+		inherits: true;
+		initial-value: 1rem;
 	}
 }
 
