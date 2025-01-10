@@ -103,9 +103,9 @@
 		initial-value: 0.25rem;
 	}
 	
-:root {
-	--border-radius: 0.25rem;
-}	
+	:root {
+		--border-radius: 0.25rem;
+	}	
 
 	@property --shadow-1 {
 		syntax: '*';
@@ -155,21 +155,22 @@
 		initial-value: 80%;
 	}
 
-@property --animation-duration {
+	@property --animation-duration {
 		syntax: '<time>';
 		inherits: true;
 		initial-value: 0.2s;
 	}
 
-@property --gap {
+	@property --gap {
 	syntax: '<length>';
 	inherits: true;
 	        initial-value: 1rem;
 	}
 	
-:root {
+	:root {
 	--gap: 1rem; /* Fallback */
 	}
+}
 
 @layer reset {
 	:where([hidden]) {
@@ -240,11 +241,11 @@
 		}
 	}
 
-@media (prefers-reduced-data: reduce) {
-  img, video {
-    display: none;
-  }
-}
+	@media (prefers-reduced-data: reduce) {
+	  img, video {
+	    display: none;
+	  }
+	}
 
 	:where(:not(:active)):focus-visible {
 		outline-offset: 5px;
@@ -304,7 +305,7 @@
 			scroll-behavior: smooth;
 		}
 	}
-
+	
 	body {
 		min-block-size: 100%;
 		color: var(--color-text);
@@ -478,6 +479,14 @@
 		overflow: hidden;
 		margin: 0;
 		padding: 0;
+	}
+
+	dialog::backdrop {
+		backdrop-filter: blur(2px);
+	}
+
+	body:has(dialog[open]) {
+		overflow: hidden;
 	}
 
 	hr {
