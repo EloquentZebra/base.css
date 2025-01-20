@@ -273,6 +273,9 @@
 }
 
 @layer defaults {
+	@view-transition {
+		  navigation: auto;
+	}
 	:root {
 		
 	}
@@ -526,7 +529,7 @@
 		color: #333333;
 		border-radius: var(--border-radius);
 		width: fit-content;
-		margin: 0 0.1em;
+		margin-inline: 0.1em;
 		padding: 0.1em 0.2em;
 		box-decoration-break: clone;
 	}
