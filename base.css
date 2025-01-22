@@ -1013,16 +1013,6 @@
 
 		& .card-content {
 			padding: var(--gap);
-
-			display: flex;
-			flex-wrap: wrap;
-			gap: var(--gap);
-			justify-content: center;
-			vertical-align: center;
-
-			@media (width < 800px) {
-				display: block;
-			}
 		}
 	}
 }
