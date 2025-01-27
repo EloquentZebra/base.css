@@ -911,9 +911,13 @@
 	}
 
 	:target {
-	scroll-margin-block: 1rlh;
+		scroll-margin-block: 1rlh;
 	}
 
+	::target-text {
+		background-color: var(--color-highlight);
+		color: white;
+	}
 
 	
 	@media (prefers-color-scheme: dark) {
