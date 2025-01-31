@@ -513,6 +513,7 @@
 
 	em, i {
 		font-style: italic;
+		font-family: var(--font-serif);
 	}
 
 	del, s {
