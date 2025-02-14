@@ -894,7 +894,7 @@
 	} 
 
 	details[open] > summary::after {
-		transform: translate(5px,0) rotate(45deg);
+		transform: rotate(45deg);
 	}
 
 	details summary:focus {
