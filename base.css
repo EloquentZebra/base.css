@@ -366,10 +366,6 @@
 		font-variant-ligatures: discretionary-ligatures; 
 	}
 
-	h1.uppercase {
-		font-variant-caps: titling-caps;
-	}
-
 	h2 {
 		font-size: 2em;
 	}
@@ -1071,6 +1067,11 @@
 		font-family: var(--font-sans);
 	}
 
+	.uppercase {
+		text-transform: uppercase;
+		font-variant-caps: titling-caps;
+	}
+	
 	.font-serif {
 		font-family: var(--font-serif);
 	}
@@ -1084,26 +1085,26 @@
 	    }
 	
 	.bg-secondary {
-	background-color: var(--color-bg-secondary);
+		background-color: var(--color-bg-secondary);
 	}
 	
 	.bg-accent-0 {
-	background-color: var(--color);
+		background-color: var(--color);
 	}
 	
 	.bg-accent-1 {
-	background-color: var(--color-accent-1);
-	color: #333333;
+		background-color: var(--color-accent-1);
+		color: #333333;
 	}  
 	
 	.bg-accent-2 {
-	background-color: var(--color-accent-2);
-	color: #333333;
+		background-color: var(--color-accent-2);
+		color: #333333;
 	}
 	
 	.bg-accent-3 {
-	background-color: var(--color-accent-3);
-	color: white;
+		background-color: var(--color-accent-3);
+		color: white;
 	}
 	
 	.bg-accent-4 {
@@ -1112,8 +1113,8 @@
 	}
 	
 	.bg-accent-5 {
-	background-color: var(--color-accent-5);
-	color: white;
+		background-color: var(--color-accent-5);
+		color: white;
 	}
 	
 	.color-main {
@@ -1125,35 +1126,35 @@
 	}
 	
 	.color-success {
-	color: var(--color-success),
+		color: var(--color-success),
 	}
 	
 	.color-warning {
-	color: var(--color-warning);
+		color: var(--color-warning);
 	}
 	
 	.color-error {
-	color: var(--color-error);
+		color: var(--color-error);
 	}
 	
 	.color-accent-1 {
-	color: var(--color-accent-1);
+		color: var(--color-accent-1);
 	}
 	
 	.color-accent-2 {
-	color: var(--color-accent-2);
+		color: var(--color-accent-2);
 	}
 	
 	.color-accent-3 {
-	color: var(--color-accent-3);
+		color: var(--color-accent-3);
 	}
 	
 	.color-accent-4 {
-	color: var(--color-accent-4);
+		color: var(--color-accent-4);
 	}
 	
 	.color-accent-5 {
-	color: var(--color-accent-5);
+		color: var(--color-accent-5);
 	}
 
 	.border {
