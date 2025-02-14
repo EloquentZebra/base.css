@@ -273,13 +273,6 @@
 }
 
 @layer defaults {
-	@view-transition {
-		  navigation: auto;
-	}
-	:root {
-		
-	}
-	
 	::selection {
 		color: var(--color-bg);
 		background-color: var(--color-text);
@@ -311,11 +304,8 @@
 		font-synthesis: none;
 		text-rendering: optimizeLegibility;
 		padding: 0;
+        margin: 0;
 		hyphens: auto;
-		hyphenate-limit-chars: 7 4 3;
-		hyphenate-limit-lines: 2;
-		hyphenate-limit-zone: 8%;
-		hyphenate-limit-last: always;
 		tab-size: 4;
 		overflow-x: hidden;
 		overflow-y: auto;
@@ -344,7 +334,6 @@
 
 	body :where(h1, h2, h3, h4, h5, h6, button, input, label) {
 		line-height: 1;
-		margin: var(--gap) 0 0 0;
 	}
 
 	body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
@@ -357,8 +346,8 @@
 
 	p, h1, h2, h3, h4, h5, h6 {
 		overflow-wrap: break-word;
-		margin-top: 1em;
-		margin-bottom: var(--gap);
+		margin-block-start: 1em;
+		margin-block-end: var(--gap);
 	}
 
 	h1 {
@@ -417,7 +406,7 @@
 	}
 
 	footer {
-		padding: var(--gap) 0;
+		padding-block: var(--gap);
 		font-size: var(--font-size-small);
 		color: var(--color-text-muted);
 	}
@@ -452,14 +441,14 @@
 		color: var(--color-text-muted);
 		font-size: var(--font-size-small);
 		font-style: italic;
-		padding-top: calc(var(--gap) / 4);
+		padding-block-start: calc(var(--gap) / 4);
 	}
 
 	figure:has(figcaption) {
-		padding: calc(var(--gap) / 4);
+		padding-block-start: calc(var(--gap) / 4);
 		background-color: var(--color-bg-secondary);
 		border-radius: var(--border-radius);
-		margin: var(--gap) 0;
+		margin-block: var(--gap);
 	}
 
 	figure figcaption > * {
@@ -485,7 +474,7 @@
 	hr {
 		background-color: var(--color-text);
 		border: none;
-		height: 0.1em;
+		height: 3pt;
 		margin: var(--gap);
 	}
 
@@ -529,7 +518,8 @@
 		border-radius: var(--border-radius);
 		width: fit-content;
 		margin-inline: 0.1em;
-		padding: 0.1em 0.2em;
+		padding-block: 0.1em;
+        padding-inline: 0.2em;
 		box-decoration-break: clone;
 	}
 
@@ -547,7 +537,7 @@
 	pre > samp {
 		display: block;
 		max-width: 100%;
-		margin: calc(var(--gap) / 2) 0;
+		margin-block: calc(var(--gap) / 2);
 		padding: calc(var(--gap) / 2);
 		box-decoration-break: clone;
 		overflow-x: auto;
@@ -605,7 +595,7 @@
 	}
 
 	li > :where(ol, ul) {
-		margin-left: 1.5em;
+		margin-inline-start: 1.5em;
 	}
 
 	dt {
@@ -627,7 +617,8 @@
 		display: block;
 		background-color: var(--color-bg-secondary);
 		line-height: inherit;
-		margin: var(--gap) auto;
+		margin-block: var(--gap);
+        margin-inline: auto;
 		padding: var(--gap);
 		border-left: 0.25em solid var(--color-text);
 	}
@@ -647,7 +638,7 @@
 	input,
 	select,
 	textarea {
-		border: 2px solid var(--color-border);
+		border: 0.1em solid var(--color-border);
 		background-color: var(--color-bg);
 		border-radius: var(--border-radius);
 		font-family: inherit;
@@ -707,8 +698,8 @@
 	input[type="checkbox"]:checked+label:before {
 	content: '';
 	position: absolute;
-	margin-left: -1.5em;
-	margin-top: -0.5em;
+    margin-inline-start: -1.5em;
+    margin-block-start: -0.5em;
 	width: 2em;
 	height: 2em;
 	background: transparent;
@@ -735,7 +726,8 @@
 		border: 2px solid var(--color);
 		background-color: var(--color);
 		cursor: pointer;
-		padding: calc(var(--gap) / 2) var(--gap);
+        padding-block: calc(var(--gap) / 2);
+        padding-inline: var(--gap);
 	}
 
 	:where(button, .button, [type="submit"]):hover {
@@ -831,7 +823,7 @@
 	}
 
 	summary::marker, summary::-webkit-details-marker {
-	color: transparent;
+	    color: transparent;
 	}
 
 	summary > p:where(:first-child, :last-child) {
@@ -840,8 +832,9 @@
 	}
 
 	details {
-		margin: var(--gap) auto;
-		padding: 0 var(--gap);
+		margin-block: var(--gap);
+        margin-inline: auto;
+		padding-inline: var(--gap);
 		width: 100%;
 		max-width: calc(100% - 2em);
 		position: relative;
@@ -853,7 +846,7 @@
 	}
 
 	details > :last-child {
-		margin-bottom: var(--gap);
+		margin-block-end: var(--gap);
 	}
 
 	details::before {
@@ -963,7 +956,7 @@
 	}
 
 	.row:not(:last-child) {
-		padding-bottom: var(--gap);
+		padding-block-end: var(--gap);
 	}
 
 	[class*="col"] {
@@ -972,7 +965,7 @@
 
 		@media (width < 800px) {
 			width: 100%;
-			margin: 0 0 var(--gap) 0;
+			margin-block-end: var(--gap);
 			padding: 0;
 		}
 	}
@@ -1003,7 +996,7 @@
 			background-color: #f9fafb;
 			background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f3f4f6' fill-opacity='0.75' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
 			background-repeat: repeat;
-			padding: 0.25em 0;
+			padding-block: 0.25em;
 
 			& p {
 				margin: 0;
@@ -1024,6 +1017,7 @@
 @layer utilites {
 	.hide-on-mobile {
 		display: block;
+
 		@media (width < 800px) {
 			display: none;
 		}
@@ -1108,8 +1102,8 @@
 	}
 	
 	.bg-accent-4 {
-	background-color: var(--color-accent-4);
-	color: white;
+        background-color: var(--color-accent-4);
+        color: white;
 	}
 	
 	.bg-accent-5 {
@@ -1118,11 +1112,11 @@
 	}
 	
 	.color-main {
-	color: var(--color-text);
+    	color: var(--color-text);
 	}
 	
 	.color-muted {
-	color: var(--color-text-muted)
+	    color: var(--color-text-muted)
 	}
 	
 	.color-success {
@@ -1158,7 +1152,7 @@
 	}
 
 	.border {
-		border: 0.1rem solid var(--color-border);
+		border: 3pt solid var(--color-border);
 		border-radius: var(--border-radius);
 	}
 	
