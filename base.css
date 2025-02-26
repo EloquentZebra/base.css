@@ -304,7 +304,7 @@
 		font-synthesis: none;
 		text-rendering: optimizeLegibility;
 		padding: 0;
-        margin: 0;
+        	margin: 0;
 		hyphens: auto;
 		tab-size: 4;
 		overflow-x: hidden;
@@ -698,8 +698,8 @@
 	input[type="checkbox"]:checked+label:before {
 	content: '';
 	position: absolute;
-    margin-inline-start: -1.5em;
-    margin-block-start: -0.5em;
+    	margin-inline-start: -1.5em;
+   	margin-block-start: -0.5em;
 	width: 2em;
 	height: 2em;
 	background: transparent;
@@ -726,8 +726,9 @@
 		border: 2px solid var(--color);
 		background-color: var(--color);
 		cursor: pointer;
-        padding-block: calc(var(--gap) / 2);
-        padding-inline: var(--gap);
+		margin-block: var(--gap);
+        	padding-block: calc(var(--gap) / 2);
+        	padding-inline: var(--gap);
 	}
 
 	:where(button, .button, [type="submit"]):hover {
