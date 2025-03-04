@@ -235,7 +235,7 @@
 
 	@media (prefers-reduced-data: reduce) {
 	  img, video {
-	    display: none;
+		display: none;
 	  }
 	}
 
@@ -304,7 +304,7 @@
 		font-synthesis: none;
 		text-rendering: optimizeLegibility;
 		padding: 0;
-        	margin: 0;
+			margin: 0;
 		hyphens: auto;
 		tab-size: 4;
 		overflow-x: hidden;
@@ -519,7 +519,7 @@
 		width: fit-content;
 		margin-inline: 0.1em;
 		padding-block: 0.1em;
-        padding-inline: 0.2em;
+		padding-inline: 0.2em;
 		box-decoration-break: clone;
 	}
 
@@ -603,7 +603,7 @@
 	}
 
 	dd::before {
-		content: "→";
+		content: "â†’";
 	}
 	q::before {
 		content: open-quote;
@@ -618,7 +618,7 @@
 		background-color: var(--color-bg-secondary);
 		line-height: inherit;
 		margin-block: var(--gap);
-        margin-inline: auto;
+		margin-inline: auto;
 		padding: var(--gap);
 		border-left: 0.25em solid var(--color-text);
 	}
@@ -698,7 +698,7 @@
 	input[type="checkbox"]:checked+label:before {
 	content: '';
 	position: absolute;
-    	margin-inline-start: -1.5em;
+		margin-inline-start: -1.5em;
    	margin-block-start: -0.5em;
 	width: 2em;
 	height: 2em;
@@ -727,8 +727,8 @@
 		background-color: var(--color);
 		cursor: pointer;
 		margin-block: var(--gap);
-        	padding-block: calc(var(--gap) / 2);
-        	padding-inline: var(--gap);
+			padding-block: calc(var(--gap) / 2);
+			padding-inline: var(--gap);
 	}
 
 	:where(button, .button, [type="submit"]):hover {
@@ -824,7 +824,7 @@
 	}
 
 	summary::marker, summary::-webkit-details-marker {
-	    color: transparent;
+		color: transparent;
 	}
 
 	summary > p:where(:first-child, :last-child) {
@@ -834,7 +834,7 @@
 
 	details {
 		margin-block: var(--gap);
-        margin-inline: auto;
+		margin-inline: auto;
 		padding-inline: var(--gap);
 		width: 100%;
 		max-width: calc(100% - 2em);
@@ -1076,8 +1076,8 @@
 	}
 
 	.bg-main {
-	        background-color: var(--color-bg);
-	    }
+			background-color: var(--color-bg);
+		}
 	
 	.bg-secondary {
 		background-color: var(--color-bg-secondary);
@@ -1103,8 +1103,8 @@
 	}
 	
 	.bg-accent-4 {
-        background-color: var(--color-accent-4);
-        color: white;
+		background-color: var(--color-accent-4);
+		color: white;
 	}
 	
 	.bg-accent-5 {
@@ -1113,11 +1113,11 @@
 	}
 	
 	.color-main {
-    	color: var(--color-text);
+		color: var(--color-text);
 	}
 	
 	.color-muted {
-	    color: var(--color-text-muted)
+		color: var(--color-text-muted)
 	}
 	
 	.color-success {
@@ -1165,37 +1165,37 @@
 		border-image-slice: 1;
 	}
 
-	    .content {
-	        --gap: clamp(1rem, 6vw, 3rem);
-	        --full: minmax(var(--gap), 1fr);
-	        --content: min(50ch, 100% - var(--gap) * 2);
-	        --popout: minmax(0, 2rem);
-	        --feature: minmax(0, 5rem);
-	
-	      display: grid;
-	      grid-template-columns:
-	        [full-start] var(--full)
-	        [feature-start] var(--feature)
-	        [popout-start] var(--popout)
-	        [content-start] var(--content) [content-end]
-	        var(--popout) [popout-end]
-	        var(--feature) [feature-end]
-	        var(--full) [full-end];
-	    }
-	
-	    .content > * {
-	        grid-column: content;
-	    }
-	
-	    .popout {
-	        grid-column: popout;
-	    }
-	
-	    .feature {
-	        grid-column: feature;
-	    }
-	
-	    .full {
-	        grid-column: full;
-	    }
+	.content {
+		--gap: clamp(1rem, 6vw, 3rem);
+		--full: minmax(var(--gap), 1fr);
+		--content: min(50ch, 100% - var(--gap) * 2);
+		--popout: minmax(0, 2rem);
+		--feature: minmax(0, 5rem);
+
+		display: grid;
+		grid-template-columns:
+		[full-start] var(--full)
+		[feature-start] var(--feature)
+		[popout-start] var(--popout)
+		[content-start] var(--content) [content-end]
+		var(--popout) [popout-end]
+		var(--feature) [feature-end]
+		var(--full) [full-end];
+	}
+
+	.content > * {
+		grid-column: content;
+	}
+
+	.popout {
+		grid-column: popout;
+	}
+
+	.feature {
+		grid-column: feature;
+	}
+
+	.full {
+		grid-column: full;
+	}
 }
