@@ -142,7 +142,8 @@
 	@property --font-size {
 		syntax: '*';
 		inherits: true;
-		initial-value: clamp(1.1rem, calc(1.1rem + .25vw), 1.75rem);
+		initial-value: clamp(1em, 0.9em + 1vw, 1.5em);
+		/* initial-value: clamp(1.1rem, calc(1.1rem + .25vw), 1.75rem); */
 	}
 
 	@property --font-size-small {
@@ -282,7 +283,6 @@
 		-moz-text-size-adjust: none;
 		-webkit-text-size-adjust: none;
 		text-size-adjust: none;
-		font-size: var(--font-size);
 		hanging-punctuation: first allow-end last;
 		block-size: 100%;
 	}
@@ -297,14 +297,14 @@
 	body {
 		min-block-size: 100%;
 		color: var(--color-text);
-		font-size: inherit;
+		font-size: var(--font-size);
 		background-color: var(--color-bg);
 		font-family: var(--font-sans);
 		font-variant-ligatures: common-ligatures;
 		font-synthesis: none;
 		text-rendering: optimizeLegibility;
 		padding: 0;
-			margin: 0;
+		margin: 0;
 		hyphens: auto;
 		tab-size: 4;
 		overflow-x: hidden;
