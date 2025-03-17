@@ -392,6 +392,7 @@
 		text-decoration: underline;
 		text-decoration-color: var(--color-link);
 		text-decoration-thickness: 2px;
+		text-underline-offset: 0.2ex;
 		text-decoration-skip-ink: auto;
 		cursor: pointer;
 	}
