@@ -382,7 +382,7 @@
 		margin-block: var(--gap);
 	}
 
-	:where(a) {
+	:where(a, a:hover, a:link, a:visited) {
 		cursor: pointer;
 		color: inherit;
 		font-size: inherit;
@@ -391,14 +391,14 @@
 	a:not([class]) {
 		text-decoration: underline;
 		text-decoration-color: var(--color-link);
-		text-decoration-thickness: 2px;
+		text-decoration-thickness: 0.2ex;
 		text-underline-offset: 0.2ex;
 		text-decoration-skip-ink: auto;
 		cursor: pointer;
-	}
-
-	a:hover {
-		color: var(--color-link);
+		
+		:hover {
+			color: var(--color-link);
+		}
 	}
 
 	a:focus {
