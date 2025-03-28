@@ -447,6 +447,7 @@
 
 	figure:has(figcaption) {
 		padding-block-start: calc(var(--gap) / 4);
+		padding-inline: calc(var(--gap) / 4);
 		background-color: var(--color-bg-secondary);
 		border-radius: var(--border-radius);
 		margin-block: var(--gap);
