@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @layer variables, reset, defaults, components, utilities;
 
 @layer variables {
