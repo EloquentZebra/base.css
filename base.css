@@ -607,7 +607,7 @@
 	}
 
 	dd::before {
-		content: "â†’";
+		content: "→";
 	}
 	q::before {
 		content: open-quote;
