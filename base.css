@@ -731,8 +731,8 @@
 		background-color: var(--color);
 		cursor: pointer;
 		margin-block: var(--gap);
-			padding-block: calc(var(--gap) / 2);
-			padding-inline: var(--gap);
+		padding-block: var(--gap) calc(var(--gap) / 2);
+		padding-inline: var(--gap);
 	}
 
 	:where(button, .button, [type="submit"]):hover {
