@@ -237,9 +237,9 @@
 	}
 
 	@media (prefers-reduced-data: reduce) {
-	  img, video {
-		display: none;
-	  }
+		img, video {
+			display: none;
+		}
 	}
 
 	:where(:not(:active)):focus-visible {
@@ -249,7 +249,6 @@
 	*,
 	*::before,
 	*::after {
-		/* all: unset; */
 		display: revert;
 		box-sizing: border-box;
 		margin: 0;
