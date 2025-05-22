@@ -1002,8 +1002,10 @@
 			background-repeat: repeat;
 			padding-block: 0.25em;
 
-			& p {
+			& * {
 				margin: 0;
+				font-size: 1em;
+				font-weight: bold;
 			}
 			
 			@media (prefers-color-scheme: dark) {
