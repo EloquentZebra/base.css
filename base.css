@@ -75,6 +75,12 @@
 		initial-value: #eeeeee; 
 	}
 
+	@property --color-bg-card {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: #f3f5f7;
+	}
+
 	@property --color-text {
 		syntax: '<color>';
 		inherits: true;
@@ -919,6 +925,7 @@
 		:root {
 			--color-bg: #2a2a2a;
 			--color-bg-secondary: #5c5e62;
+			--color-bg-card: #1e1e1e;
 			--color-text: #eeeeee;
 			--color-text-muted: #a2a3a5;
 		}
