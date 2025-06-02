@@ -670,7 +670,7 @@
 	textarea {
 		display: block;
 		width: 100%;
-		padding: calc(var(--gap) / 2) var(--gap);
+		padding: calc(var(--gap) / 4) calc(var(--gap) / 2);
 		line-height: 100%;
 	}
 
@@ -736,7 +736,7 @@
 		background-color: var(--color);
 		cursor: pointer;
 		margin-block: var(--gap);
-		padding: var(--gap);
+		padding: calc(var(--gap) / 4) calc(var(--gap) / 2);
 	}
 
 	:where(button, .button, [type="submit"]):hover {
