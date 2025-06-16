@@ -986,6 +986,7 @@
 
 	.card {
 		--border-radius: 4px;
+		--gap: 0.25rem;
 		--color-border: #e5e7eb;
 		@media (prefers-color-scheme: dark) {
 			--color-border: #3a3a3c;	
