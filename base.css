@@ -1023,7 +1023,7 @@
 		& .card-content {
 			padding: 0.5rem;
 
-			:fist-child {
+			:first-child {
 				margin-top: 0;
 			}
 		
@@ -1032,9 +1032,6 @@
 			}
 		}
 
-		p {
-			margin: 0;
-		}
 	}
 }
 
