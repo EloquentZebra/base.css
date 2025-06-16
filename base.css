@@ -1204,6 +1204,8 @@
 		var(--popout) [popout-end]
 		var(--feature) [feature-end]
 		var(--full) [full-end];
+		grid-auto-rows: min-content;
+		gap: var(--gap);
 	}
 
 	.content > * {
