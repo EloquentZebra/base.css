@@ -6,43 +6,43 @@
 	@property --color {
 		syntax: '<color>';
 		inherits: true;
-		initial-value: #FFD166; 
+		initial-value: #ffd166; 
 	}
 
 	@property --color-accent-1 {
 		syntax: '<color>';
 		inherits: true;
-		initial-value: #8AC926; 
+		initial-value: #8av926; 
 	}
 
 	@property --color-accent-2 {
 		syntax: '<color>';
 		inherits: true;
-		initial-value: #FFD166; 
+		initial-value: #ffd166; 
 	}
 
 	@property --color-accent-3 {
 		syntax: '<color>';
 		inherits: true;
-		initial-value: #EF476F; 
+		initial-value: #ef476f; 
 	}
 
 	@property --color-accent-4 {
 		syntax: '<color>';
 		inherits: true;
-		initial-value: #118AB2; 
+		initial-value: #118ab2; 
 	}
 
 	@property --color-accent-5 {
 		syntax: '<color>';
 		inherits: true;
-		initial-value: #073B4C; 
+		initial-value: #073b4c; 
 	}
 
 	@property --color-highlight {
 		syntax: '<color>';
 		inherits: true;
-		initial-value: #FFDC00; 
+		initial-value: #ffdc00; 
 	}
 
 	@property --color-error {
@@ -247,7 +247,7 @@
 		
 		::view-transition-old(root),
 		::view-transition-new(root) {
-		  animation: fade 0.3s ease both;
+		  animation: fade var(--animation-duration) ease both;
 		}
 		
 		@keyframes fade {
@@ -686,7 +686,7 @@
 		display: block;
 		width: 100%;
 		padding: calc(var(--gap) / 4) calc(var(--gap) / 2);
-		line-height: 100%;
+		line-height: inherit;
 	}
 
 	textarea {
@@ -711,7 +711,7 @@
 	}
 
 	input[type="checkbox"]:checked {
-		background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVQ4T6WTXQ2AMAwGDwdIQAISQAEWsIQCQAkWkIAEJJCSNCljP7Dtdblb26+rKDxVIU+uoAY2YMoRKNwC61/BAwbGP4IXLPP7KvDCVtAARyCRIKyCBRiAHtgdSRRWwQjMwOlIkrBtwZVIO5LzHZVMO7RwdohWIoIk7EtBJXIXfVkr8sUoki5Wtm3n6x4E/1yx4AI+qiERKNFzCwAAAABJRU5ErkJggg==") #FFFFFF;
+		background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVQ4T6WTXQ2AMAwGDwdIQAISQAEWsIQCQAkWkIAEJJCSNCljP7Dtdblb26+rKDxVIU+uoAY2YMoRKNwC61/BAwbGP4IXLPP7KvDCVtAARyCRIKyCBRiAHtgdSRRWwQjMwOlIkrBtwZVIO5LzHZVMO7RwdohWIoIk7EtBJXIXfVkr8sUoki5Wtm3n6x4E/1yx4AI+qiERKNFzCwAAAABJRU5ErkJggg==") #ffffff;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 1.25em 1.25em;
@@ -866,7 +866,7 @@
 		border-radius: var(--border-radius);
 		background-color: var(--color-bg);
 		color: var(--color-text);
-		transition: background-color 0.15s;
+		transition: background-color var(--animation-duration);
 	}
 
 	details > :last-child {
@@ -884,7 +884,7 @@
 		opacity: 0.15;
 		box-shadow: var(--box-shadow);
 		pointer-events: none;
-		transition: opacity 0.2s;
+		transition: opacity var(--animation-duration);
 		z-index: -1;
 	}
 
@@ -932,7 +932,7 @@
 
 	::target-text {
 		background-color: var(--color-highlight);
-		color: white;
+		color: #ffffff;
 	}
 
 	
