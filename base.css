@@ -366,68 +366,47 @@
 		text-wrap: balance;
 	}
 
-	p, h1, h2, h3, h4, h5, h6 {
-		overflow-wrap: break-word;
-		margin-block-start: 1em;
-		margin-block-end: var(--gap);
-	}
-
-	h1 {
-		font-size: 2.5em;
-		font-variant-ligatures: discretionary-ligatures; 
-	}
-
+	h1,
 	h2 {
-		font-size: 2em;
+		font-weight: 900;
+		letter-spacing: -0.02rem;
 	}
-
+	
+	h1,
+	h2,
 	h3 {
-		font-size: 1.75em;
+		line-height: 1.1;
 	}
-
-	h4 {
-		font-size: 1.5em;
-		letter-spacing: -.08em;
-	}
-
-	h5 {
-		font-size: 1.25em;
-		letter-spacing: -.05em;
-	}
-
-	h6 {
-		font-size: 1em;
-		letter-spacing: 0;
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 /* FUTURE :heading */ {
+		text-wrap: balance;
+		margin-block-start: 0;
 	}
 
 	p {
 		margin-block: var(--gap);
-	}
-
-	:where(a, a:hover, a:link, a:visited) {
-		cursor: pointer;
-		color: inherit;
-		font-size: inherit;
+		text-wrap: pretty;
+		max-inline-size: 88ch;
 	}
 
 	a:not([class]) {
-		text-decoration: underline;
-		text-decoration-color: var(--color-link);
-		text-decoration-thickness: 0.2ex;
-		text-underline-offset: 0.2ex;
-		text-decoration-skip-ink: auto;
 		cursor: pointer;
-		
-		:hover {
-			color: var(--color-link);
+		color: inherit;
+		text-decoration-skip-ink: auto;
+		font-size: inherit;
+		color: var(--color-link);
+		text-underline-offset: 0.2ex;
+		text-decoration-thickness: 0.2ex;
+		&:not(:is(:hover, :focus)) {
+			text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
 		}
 	}
-
-	a:focus {
-		outline: 0.1em solid currentColor;
-		outline-offset: 0.2em;
-	}
-
+	
 	footer {
 		padding-block: var(--gap);
 		font-size: var(--font-size-small);
@@ -452,6 +431,8 @@
 	figure {
 		margin: 0;
 		padding: 0;
+		inline-size: fit-content;
+    	margin-inline: auto;
 	}
 
 	figure :where(img, video) {
@@ -465,6 +446,7 @@
 		font-size: var(--font-size-small);
 		font-style: italic;
 		padding-block-start: calc(var(--gap) / 4);
+		contain: inline-size;
 	}
 
 	figure:has(figcaption) {
@@ -651,97 +633,73 @@
 		font-style: normal;
 	}
 
+	
+	svg {
+		fill: currentColor;
+	}
+	
+	[aria-disabled="true" i],
+	[disabled] {
+		cursor: not-allowed;
+	}
+	
+	[hidden] {
+		display: none !important;
+	}
+	
+	[disabled],
+	label:has(input[disabled]) {
+		opacity: 0.5;
+		[disabled] {
+		opacity: 1;
+		}
+	}
+
 	/*
 	* FORMS
 	*/
 
-	label ~ input {
-		margin: 0;
-	}
-
 	input,
 	select,
-	textarea {
-		border: 0.1em solid var(--color-border);
-		background-color: var(--color-bg);
-		border-radius: var(--border-radius);
-		font-family: inherit;
-		font-size: inherit;
+	textarea,
+	button {
+		font: inherit;
+		/* FUTURE: appearance: base; */
 	}
-
-	input[type="text"],
-	input[type="email"],
-	input[type="tel"],
-	input[type="range"],
-	input[type="date"],
-	input[type="datetime-local"],
-	input[type="number"],
-	input[type="password"],
-	input[type="search"],
-	input[type="time"],
-	input[type="url"],
-	input[type="file"],
-	select,
-	textarea {
+	
+	label {
 		display: block;
-		width: 100%;
-		padding: calc(var(--gap) / 4) calc(var(--gap) / 2);
-		line-height: inherit;
 	}
-
+	
+	input:not(
+		:where(
+			[type="submit"],
+			[type="checkbox"],
+			[type="radio"],
+			[type="button"],
+			[type="reset"]
+		)
+	) {
+		inline-size: 100%;
+	}
+	
+	button,
+	input:where(
+		[type="submit"],
+		[type="reset"],
+		[type="button"]
+		) {
+		background: CanvasText;
+		color: Canvas;
+		border: 1px solid transparent;
+	}
+	
 	textarea {
-		min-height: 10rem;
+		field-sizing: content;
+		min-block-size: 5lh;
+		inline-size: 100%;
+		max-inline-size: 100%;
 	}
-
-
-	input[type="radio"],
-	input[type="checkbox"] {
-		height: 1.5em;
-		width: 1.5em;
-		vertical-align: middle;
-	}
-
-	input[type="radio"] {
-		border-radius: 50%;
-	}
-
-
-	input[type="radio"]:checked {
-		background-image: radial-gradient(var(--color-link) 40%, transparent calc(40% + 1px));
-	}
-
-	input[type="checkbox"]:checked {
-		background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVQ4T6WTXQ2AMAwGDwdIQAISQAEWsIQCQAkWkIAEJJCSNCljP7Dtdblb26+rKDxVIU+uoAY2YMoRKNwC61/BAwbGP4IXLPP7KvDCVtAARyCRIKyCBRiAHtgdSRRWwQjMwOlIkrBtwZVIO5LzHZVMO7RwdohWIoIk7EtBJXIXfVkr8sUoki5Wtm3n6x4E/1yx4AI+qiERKNFzCwAAAABJRU5ErkJggg==") #ffffff;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: 1.25em 1.25em;
-	}
-
-
-	input[type="checkbox"]:not(:checked)+label:before,
-	input[type="checkbox"]:checked+label:before {
-	content: '';
-	position: absolute;
-		margin-inline-start: -1.5em;
-   	margin-block-start: -0.5em;
-	width: 2em;
-	height: 2em;
-	background: transparent;
-	}
-
-	input::placeholder,
-	textarea::placeholder {
-		opacity: 1; /* Firefox */
-		color: var(--color-text-muted);
-	}
-
-	input:focus,
-	select:focus,
-	textarea:focus {
-		outline: none;
-		box-shadow: var(--shadow);
-	}
-
 
 	:where(button, .button, [type="submit"]) {
 		font-family: inherit;
@@ -927,7 +885,7 @@
 	}
 
 	:target {
-		scroll-margin-block: 1rlh;
+		scroll-margin-block: 3rlh;
 	}
 
 	::target-text {
