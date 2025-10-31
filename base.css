@@ -157,7 +157,7 @@
 	@property --font-size-small {
 		syntax: '<percentage>';
 		inherits: true;
-		initial-value: 80%;
+		initial-value: 83.33%;
 	}
 
 	@property --animation-duration {
@@ -370,14 +370,8 @@
 
 	h1,
 	h2 {
-		font-weight: 900;
+		font-weight: 700;
 		letter-spacing: -0.02rem;
-	}
-	
-	h1,
-	h2,
-	h3 {
-		line-height: 1.1;
 	}
 	
 	h1,
@@ -387,7 +381,32 @@
 	h5,
 	h6 /* FUTURE :heading */ {
 		text-wrap: balance;
-		margin-block-start: 0;
+		margin-block-start: calc(2 * var(--gap));
+		line-height: 1.1;
+	}
+
+	h1 {
+		font-size: 2.986rem;
+	}
+
+	h2 {
+		font-size: 2.488rem;
+	}
+
+	h3 {
+		font-size: 2.074rem;
+	}
+
+	h4 {
+		font-size: 1.728rem;
+	}
+
+	h5 {
+		font-size: 1.44rem;
+	}
+
+	h6 {
+		font-size: 1.2rem;
 	}
 
 	p {
@@ -399,13 +418,16 @@
 	a:not([class]) {
 		cursor: pointer;
 		color: inherit;
-		text-decoration-skip-ink: auto;
 		font-size: inherit;
-		color: var(--color-link);
+		color: var(--color-text);
+		text-decoration: underline;
+		text-decoration-skip-ink: auto;
+		text-decoration-color: var(--color-link);
 		text-underline-offset: 0.2ex;
 		text-decoration-thickness: 0.2ex;
-		&:not(:is(:hover, :focus)) {
-			text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
+
+		&:is(:hover, :focus) {
+			color: var(--color-link);
 		}
 	}
 	
@@ -587,10 +609,13 @@
 
 	ul[role='list'],
 	ul[class],
+	ul,
 	ol[role='list'],
-	ol[class] {
+	ol[class],
+	ol {
 		list-style: none;
-		margin: 0;
+		margin-block-start: var(--gap);
+		margin-block-end: var(--gap);
 		padding: 0;
 	}
 
@@ -600,6 +625,7 @@
 
 	ul {
 		list-style-type: square;
+		
 	}
 
 	li > :where(ol, ul) {
@@ -723,6 +749,7 @@
 		box-shadow: none;
 		transform: scale(0.95);
 		transition: all ease-in var(--animation-duration);
+		background-color: color-mix(in srgb, var(--color), transparent 25%);
 	}
 
 	/*
