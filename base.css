@@ -281,8 +281,10 @@
 	}
 
 	:focus-visible {
+		/*
 		outline: 0.1em solid currentColor;
 		outline-offset: 0.2em;
+		*/
 	}
 
 	:where(button, button[type], input[type="button"], input[type="submit"], input[type="reset"]),
@@ -644,7 +646,7 @@
 	}
 	
 	[hidden] {
-		display: none !important;
+		display: none;
 	}
 	
 	[disabled],
@@ -664,11 +666,17 @@
 	textarea,
 	button {
 		font: inherit;
+		
+		
 		/* FUTURE: appearance: base; */
 	}
 	
 	label {
 		display: block;
+		margin-block-start: calc(var(--gap) / 2);
+		font-size: var(--font-size-small);
+		font-style: italic;
+		color: var(--color-border);
 	}
 	
 	input:not(
@@ -679,21 +687,14 @@
 			[type="button"],
 			[type="reset"]
 		)
-	) {
+	), textarea {
 		inline-size: 100%;
+		padding: 0.25em;
+		margin-block-start: calc(var(--gap) / 4);
+		margin-block-end: var(--gap);
+		border: 1px solid var(--color-border);
 	}
-	
-	button,
-	input:where(
-		[type="submit"],
-		[type="reset"],
-		[type="button"]
-		) {
-		background: CanvasText;
-		color: Canvas;
-		border: 1px solid transparent;
-	}
-	
+
 	textarea {
 		field-sizing: content;
 		min-block-size: 5lh;
@@ -701,29 +702,28 @@
 		max-inline-size: 100%;
 	}
 
-	:where(button, .button, [type="submit"]) {
+	:where(button, .button, [type="submit"], [type="reset"] [type="button"]) {
 		font-family: inherit;
 		font-size: inherit;
 		border-radius: var(--border-radius);
-		border: 2px solid var(--color);
+		border: 1pt solid var(--color);
 		background-color: var(--color);
 		cursor: pointer;
 		margin-block: var(--gap);
-		padding: calc(var(--gap) / 2) var(--gap);
+		padding-block: calc(var(--gap) / 2);
+		padding-inline: var(--gap);
 	}
 
-	:where(button, .button, [type="submit"]):hover {
+	:where(button, .button, [type="submit"], [type="reset"] [type="button"]):hover {
 		box-shadow: var(--shadow);
 		transition: all ease-in var(--animation-duration);
 	}
 
-	:where(button, .button, [type="submit"]):active {
+	:where(button, .button, [type="submit"], [type="reset"] [type="button"]):active {
 		box-shadow: none;
 		transform: scale(0.95);
 		transition: all ease-in var(--animation-duration);
 	}
-
-
 
 	/*
 	* TABLE
