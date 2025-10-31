@@ -12,7 +12,7 @@
 	@property --color-accent-1 {
 		syntax: '<color>';
 		inherits: true;
-		initial-value: #8av926; 
+		initial-value: #4CE0B3; 
 	}
 
 	@property --color-accent-2 {
