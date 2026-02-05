@@ -686,14 +686,12 @@
 	/*
 	* FORMS
 	*/
-
+	
 	input,
 	select,
 	textarea,
 	button {
 		font: inherit;
-		
-		
 		/* FUTURE: appearance: base; */
 	}
 	
@@ -705,6 +703,9 @@
 		color: var(--color-border);
 	}
 	
+	/* 
+	* TEXT INPUTS & TEXTAREAS 
+	*/
 	input:not(
 		:where(
 			[type="submit"],
@@ -719,37 +720,111 @@
 		margin-block-start: calc(var(--gap) / 4);
 		margin-block-end: var(--gap);
 		border: 1px solid var(--color-border);
+		background-color: transparent;
+		border-radius: var(--border-radius, 0); /* Fallback falls Var fehlt */
 	}
-
+	
 	textarea {
 		field-sizing: content;
 		min-block-size: 5lh;
 		inline-size: 100%;
 		max-inline-size: 100%;
 	}
-
+	
+	/* 
+	* BUTTONS 
+	*/
 	:where(button, .button, [type="submit"], [type="reset"] [type="button"]) {
 		font-family: inherit;
 		font-size: inherit;
 		border-radius: var(--border-radius);
-		border: 1pt solid var(--color-border);
-		background-color: var(--color-bg);
+		border: 1pt solid var(--color);
+		background-color: var(--color);
+		color: white; /* Annahme: Text auf Farbe ist weiss */
 		cursor: pointer;
 		margin-block: var(--gap);
 		padding-block: calc(var(--gap) / 2);
 		padding-inline: var(--gap);
 	}
-
+	
 	:where(button, .button, [type="submit"], [type="reset"] [type="button"]):hover {
 		box-shadow: var(--shadow);
 		transition: all ease-in var(--animation-duration);
 	}
-
+	
 	:where(button, .button, [type="submit"], [type="reset"] [type="button"]):active {
 		box-shadow: none;
 		transform: scale(0.95);
 		transition: all ease-in var(--animation-duration);
 		background-color: color-mix(in srgb, var(--color), transparent 25%);
+	}
+	
+	/*
+	* CHECKBOXES & RADIOS
+	*/
+	:where([type="checkbox"], [type="radio"]) {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 1.15em;
+		height: 1.15em;
+		border: 1px solid var(--color-border);
+		background-color: transparent;
+		margin-inline-end: calc(var(--gap) / 4);
+		vertical-align: middle;
+		display: inline-grid;
+		place-content: center;
+		cursor: pointer;
+		margin-block: calc(var(--gap) / 4);
+	}
+	
+	:where([type="checkbox"], [type="radio"]):checked {
+		background-color: var(--color);
+		border-color: var(--color);
+	}
+	
+	:where([type="checkbox"], [type="radio"]):disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+	
+	/* Checkmark logic (CSS only, no SVG needed) */
+	[type="checkbox"]::before {
+		content: "";
+		width: 0.65em;
+		height: 0.65em;
+		transform: scale(0);
+		transition: transform var(--animation-duration) ease-in-out;
+		box-shadow: inset 1em 1em white; /* Icon color */
+		transform-origin: center;
+		clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+	}
+	
+	/* Radio Dot logic */
+	[type="radio"] {
+		border-radius: 50%;
+	}
+	
+	[type="radio"]::before {
+		content: "";
+		width: 0.5em;
+		height: 0.5em;
+		border-radius: 50%;
+		transform: scale(0);
+		transition: transform var(--animation-duration) ease-in-out;
+		box-shadow: inset 1em 1em white; /* Icon color */
+	}
+	
+	:where([type="checkbox"], [type="radio"]):checked::before {
+		transform: scale(1);
+	}
+	
+	/* Optional: Override label style when adjacent to checkbox for better layout */
+	:where([type="checkbox"], [type="radio"]) + label {
+		display: inline-block;
+		margin: 0;
+		font-style: normal;
+		vertical-align: middle;
+		color: inherit;
 	}
 
 	/*
