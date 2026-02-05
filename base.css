@@ -732,8 +732,8 @@
 		font-family: inherit;
 		font-size: inherit;
 		border-radius: var(--border-radius);
-		border: 1pt solid var(--color);
-		background-color: var(--color);
+		border: 1pt solid var(--color-border);
+		background-color: var(--color-bg);
 		cursor: pointer;
 		margin-block: var(--gap);
 		padding-block: calc(var(--gap) / 2);
@@ -919,6 +919,14 @@
 		background-color: var(--color-highlight);
 		color: #ffffff;
 	}
+
+	  @supports(position-area: end) {
+		[popover] {
+		  margin: 0;
+		  position-area: end span-end;
+		  position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+		}
+	  }
 
 	
 	@media (prefers-color-scheme: dark) {
