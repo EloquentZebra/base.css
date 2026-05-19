@@ -1070,6 +1070,7 @@
         border: 1px solid var(--card-color-border);
         border-top: 3px solid var(--color);
         box-shadow: var(--shadow-2);
+        margin-block: var(--gap);
 
         @media (prefers-color-scheme: dark) {
             --card-color-border: #3a3a3c;
