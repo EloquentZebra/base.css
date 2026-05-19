@@ -171,6 +171,12 @@
 		inherits: true;
 		initial-value: 1rem;
 	}
+
+	@property --round-interval {
+		syntax: "<length>";
+		inherits: true;
+		initial-value: 4px;
+	}
 }
 
 @layer reset {
@@ -321,7 +327,7 @@
 	body {
 		min-block-size: 100%;
 		color: var(--color-text);
-		font-size: var(--font-size);
+		font-size: round(down, var(--font-size), var(--round-interval, 4px));
 		background-color: var(--color-bg);
 		font-family: var(--font-sans);
 		font-variant-ligatures: common-ligatures;
